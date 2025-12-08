@@ -42,47 +42,63 @@
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 }
 
-/* HIGH CONTRAST DARK THEME (MMA STYLE) */
+/* LIGHT THEME (UFC / CZMMA CLEAN STYLE) */
 :root {
-  --background: 0 0% 5%; /* #0d0d0d - Very dark grey/black */
-  --foreground: 0 0% 98%; /* White */
+  --background: 0 0% 100%; /* Pure White */
+  --foreground: 0 0% 10%; /* Almost Black */
 
-  --card: 0 0% 8%; /* Slightly lighter black */
-  --card-foreground: 0 0% 98%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
 
-  --popover: 0 0% 8%;
-  --popover-foreground: 0 0% 98%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
 
-  --primary: 0 72% 51%; /* #dc2626 - Aggressive Red */
-  --primary-foreground: 0 0% 98%;
+  --primary: 354 85% 50%; /* #ea0c1d - UFC Red / Vibrant Red */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 0 0% 15%; /* Dark Grey */
-  --secondary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96%; /* Very Light Grey */
+  --secondary-foreground: 0 0% 10%;
 
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 63.9%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
 
-  --accent: 0 72% 51%; /* Red Accent */
-  --accent-foreground: 0 0% 98%;
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 10%;
 
-  --destructive: 0 62.8% 30.6%;
+  --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 0 0% 14.9%;
-  --input: 0 0% 14.9%;
-  --ring: 0 72% 51%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 354 85% 50%;
 
-  --radius: 0rem; /* Sharp corners for aggressive look */
+  --radius: 0rem; /* Keep sharp corners */
 
   --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Oswald', sans-serif; /* Custom font variable */
+  --font-heading: 'Oswald', sans-serif;
 }
 
-/* Force dark mode everywhere */
+/* DARK THEME (Optional toggle) */
 .dark {
   --background: 0 0% 5%;
   --foreground: 0 0% 98%;
-  /* ... same as root since we want dark mode always */
+  --card: 0 0% 8%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 354 85% 50%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 354 85% 50%;
 }
 
 @layer base {
