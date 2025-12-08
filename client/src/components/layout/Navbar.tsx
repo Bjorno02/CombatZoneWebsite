@@ -27,29 +27,22 @@ export function Navbar() {
   ];
 
   const isHome = location === "/";
-  // On home page: Transparent -> White on scroll
-  // On other pages: Always White (or black depending on design preference, let's go with UFC style White bar)
-  
+  // Always dark background for this more robust theme, but transparent at top of home
   const navBackground = isHome 
-    ? (scrolled ? "bg-white text-black shadow-md" : "bg-transparent text-white") 
-    : "bg-white text-black shadow-md";
-
-  const logoColor = isHome && !scrolled ? "text-white" : "text-black";
-  const linkColor = isHome && !scrolled ? "text-white hover:text-primary" : "text-black hover:text-primary";
-  const buttonVariant = isHome && !scrolled ? "secondary" : "default";
+    ? (scrolled ? "bg-slate-900/95 backdrop-blur-md border-b border-white/10" : "bg-transparent") 
+    : "bg-slate-900 border-b border-white/10";
 
   return (
     <nav
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        navBackground,
-        !isHome && "border-b"
+        navBackground
       )}
     >
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
-          <a className={cn("text-3xl font-bold italic tracking-tighter font-[Oswald] flex items-center gap-1", logoColor)}>
+          <a className="text-3xl font-bold italic tracking-tighter font-[Chakra_Petch] flex items-center gap-1 text-white">
             <span className="text-primary">COMBAT</span>ZONE
           </a>
         </Link>
@@ -60,25 +53,23 @@ export function Navbar() {
             <Link key={link.name} href={link.href}>
               <a
                 className={cn(
-                  "text-sm font-bold tracking-wider transition-colors font-[Oswald] uppercase",
-                  linkColor,
-                  location === link.href && "text-primary"
+                  "text-sm font-bold tracking-wide transition-colors font-[Chakra_Petch] uppercase text-gray-300 hover:text-white relative group",
+                  location === link.href && "text-white"
                 )}
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </a>
             </Link>
           ))}
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-           <button className={cn("hover:text-primary transition-colors", linkColor)}>
+           <button className="text-white hover:text-primary transition-colors">
               <User size={20} />
            </button>
            <Button 
-            className={cn("font-bold uppercase tracking-wider skew-x-[-10deg] px-6", 
-                isHome && !scrolled ? "bg-white text-black hover:bg-gray-200" : "bg-primary text-white hover:bg-primary/90"
-            )}
+            className="bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wider px-6 rounded-none skew-x-[-10deg]"
            >
             <span className="skew-x-[10deg]">Get Tickets</span>
           </Button>
@@ -86,7 +77,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className={cn("lg:hidden", isHome && !scrolled ? "text-white" : "text-black")}
+          className="lg:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,18 +86,18 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white text-black border-t border-gray-100 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 shadow-xl">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-slate-900 border-t border-white/10 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 shadow-xl h-screen">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
               <a
-                className="text-lg font-bold hover:text-primary block py-3 border-b border-gray-100"
+                className="text-xl font-bold text-white hover:text-primary block py-3 border-b border-white/5 font-[Chakra_Petch]"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </a>
             </Link>
           ))}
-          <Button className="w-full bg-primary font-bold text-white uppercase">GET TICKETS</Button>
+          <Button className="w-full bg-primary font-bold text-white uppercase mt-4">GET TICKETS</Button>
         </div>
       )}
     </nav>

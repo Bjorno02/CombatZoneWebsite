@@ -42,63 +42,64 @@
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 }
 
-/* LIGHT THEME (UFC / CZMMA CLEAN STYLE) */
+/* MODERN COMBAT SPORTS THEME (Grey/Crimson/Chakra Petch) */
 :root {
-  --background: 0 0% 100%; /* Pure White */
-  --foreground: 0 0% 10%; /* Almost Black */
+  --background: 210 20% 98%; /* Light Grey-Blue tint for depth */
+  --foreground: 222 47% 11%; /* Dark Slate Blue/Black */
 
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 10%;
+  --card-foreground: 222 47% 11%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 10%;
+  --popover-foreground: 222 47% 11%;
 
-  --primary: 354 85% 50%; /* #ea0c1d - UFC Red / Vibrant Red */
+  /* Distinct Crimson Red - darker and richer than UFC red */
+  --primary: 348 83% 47%; /* #DC143C Crimson-ish */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 0 0% 96%; /* Very Light Grey */
-  --secondary-foreground: 0 0% 10%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222 47% 11%;
 
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 45%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
 
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 10%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11%;
 
   --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
+  --destructive-foreground: 210 40% 98%;
 
-  --border: 0 0% 89.8%;
-  --input: 0 0% 89.8%;
-  --ring: 354 85% 50%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 348 83% 47%;
 
-  --radius: 0rem; /* Keep sharp corners */
+  --radius: 0.25rem; /* Slight radius, not completely sharp */
 
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Oswald', sans-serif;
+  --font-sans: 'Roboto', sans-serif;
+  --font-heading: 'Chakra Petch', sans-serif; /* Tech/Future Sports vibe */
 }
 
-/* DARK THEME (Optional toggle) */
+/* Dark mode palette just in case */
 .dark {
-  --background: 0 0% 5%;
-  --foreground: 0 0% 98%;
-  --card: 0 0% 8%;
-  --card-foreground: 0 0% 98%;
-  --popover: 0 0% 8%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 354 85% 50%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 0 0% 15%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 63.9%;
-  --accent: 0 0% 15%;
-  --accent-foreground: 0 0% 98%;
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 348 83% 47%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 14.9%;
-  --input: 0 0% 14.9%;
-  --ring: 354 85% 50%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 348 83% 47%;
 }
 
 @layer base {
@@ -110,6 +111,6 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    @apply uppercase tracking-tight font-bold;
+    @apply uppercase tracking-normal font-bold;
   }
 }
