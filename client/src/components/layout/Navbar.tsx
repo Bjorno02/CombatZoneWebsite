@@ -63,6 +63,9 @@ export function Navbar() {
                                 <ListItem href="/vip" title="VIP Experience">
                                     Exclusive access & premium seating
                                 </ListItem>
+                                <ListItem href="/tickets" title="Group Sales">
+                                    Corporate & Large Party Packages
+                                </ListItem>
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
@@ -74,42 +77,110 @@ export function Navbar() {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className="grid gap-3 p-4 w-[400px] bg-slate-900 border border-white/10">
-                                <ListItem href="/about" title="Our Story">
-                                    Mission, History & Leadership
+                                <ListItem href="/about" title="About Combat Zone">
+                                    Mission Statement & Story
                                 </ListItem>
-                                <ListItem href="/sponsors" title="Sponsors">
-                                    Partner with Combat Zone
-                                </ListItem>
-                                <ListItem href="/contact" title="Contact">
-                                    Get in touch with us
+                                <ListItem href="/leadership" title="Leadership">
+                                    Calvin Kattar's Vision
                                 </ListItem>
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
 
-                    {/* Fighters Link */}
+                    {/* Sponsors Dropdown */}
                     <NavigationMenuItem>
-                        <Link href="/fighters">
-                            <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white/10 hover:text-primary focus:bg-white/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[Chakra_Petch]">
-                                Fighters
-                            </NavigationMenuLink>
-                        </Link>
+                         <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 hover:text-primary focus:bg-white/10 focus:text-primary data-[state=open]:bg-white/10 font-[Chakra_Petch] uppercase font-bold tracking-wide text-sm">
+                            Sponsors
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 w-[400px] bg-slate-900 border border-white/10">
+                                <ListItem href="/sponsors" title="Why Sponsor">
+                                    Brand identity & Audience Stats
+                                </ListItem>
+                                <ListItem href="/sponsor-packages" title="Packages">
+                                    Tiers & Opportunities
+                                </ListItem>
+                                <ListItem href="/case-studies" title="Case Studies">
+                                    Testimonials & Success Stories
+                                </ListItem>
+                                <ListItem href="/contact" title="Contact Partnerships">
+                                    Partner with Combat Zone
+                                </ListItem>
+                            </ul>
+                        </NavigationMenuContent>
                     </NavigationMenuItem>
 
-                    {/* Media Link */}
+                    {/* Media Dropdown */}
                     <NavigationMenuItem>
-                        <Link href="/media">
-                            <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white/10 hover:text-primary focus:bg-white/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[Chakra_Petch]">
-                                Media
-                            </NavigationMenuLink>
-                        </Link>
+                         <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 hover:text-primary focus:bg-white/10 focus:text-primary data-[state=open]:bg-white/10 font-[Chakra_Petch] uppercase font-bold tracking-wide text-sm">
+                            Media
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 w-[400px] bg-slate-900 border border-white/10">
+                                <ListItem href="/media" title="Media Hub">
+                                    Featured Videos & Photos
+                                </ListItem>
+                                <ListItem href="/watch" title="Watch Fights">
+                                    Full Fight Library
+                                </ListItem>
+                                <ListItem href="/news" title="Press & News">
+                                    Breaking Updates
+                                </ListItem>
+                                <ListItem href="/social" title="Social Hub">
+                                    Connect with us
+                                </ListItem>
+                            </ul>
+                        </NavigationMenuContent>
                     </NavigationMenuItem>
 
-                    {/* Store Link */}
+                    {/* Store Dropdown */}
                     <NavigationMenuItem>
-                        <Link href="/shop">
+                         <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 hover:text-primary focus:bg-white/10 focus:text-primary data-[state=open]:bg-white/10 font-[Chakra_Petch] uppercase font-bold tracking-wide text-sm">
+                            Store
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 w-[400px] bg-slate-900 border border-white/10">
+                                <ListItem href="/shop" title="All Products">
+                                    Shop Official Gear
+                                </ListItem>
+                                <ListItem href="/shop/best-sellers" title="Best Sellers">
+                                    Fan Favorites
+                                </ListItem>
+                                <ListItem href="/shop/kattarmania" title="Kattarmania">
+                                    Exclusive Collection
+                                </ListItem>
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+
+                    {/* Fighters Dropdown */}
+                    <NavigationMenuItem>
+                         <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/10 hover:text-primary focus:bg-white/10 focus:text-primary data-[state=open]:bg-white/10 font-[Chakra_Petch] uppercase font-bold tracking-wide text-sm">
+                            Fighters
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="grid gap-3 p-4 w-[400px] bg-slate-900 border border-white/10">
+                                <ListItem href="/champions" title="Champions">
+                                    Current Title Holders
+                                </ListItem>
+                                <ListItem href="/fighters/checklist" title="Fighter Checklist">
+                                    Rules, Licensing & Medicals
+                                </ListItem>
+                                <ListItem href="/fighters/forms" title="Forms Table">
+                                    Download Required Docs
+                                </ListItem>
+                                <ListItem href="/apply" title="Onboarding">
+                                    Fighter Application
+                                </ListItem>
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+
+                     {/* Contact Link */}
+                    <NavigationMenuItem>
+                        <Link href="/contact">
                             <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white/10 hover:text-primary focus:bg-white/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50 font-[Chakra_Petch]">
-                                Store
+                                Contact
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
@@ -140,10 +211,10 @@ export function Navbar() {
           <div className="flex flex-col gap-6">
             <MobileLink href="/events" onClick={() => setIsOpen(false)}>Events</MobileLink>
             <MobileLink href="/about" onClick={() => setIsOpen(false)}>About</MobileLink>
-            <MobileLink href="/fighters" onClick={() => setIsOpen(false)}>Fighters</MobileLink>
+            <MobileLink href="/sponsors" onClick={() => setIsOpen(false)}>Sponsors</MobileLink>
             <MobileLink href="/media" onClick={() => setIsOpen(false)}>Media</MobileLink>
             <MobileLink href="/shop" onClick={() => setIsOpen(false)}>Store</MobileLink>
-            <MobileLink href="/sponsors" onClick={() => setIsOpen(false)}>Sponsors</MobileLink>
+            <MobileLink href="/fighters" onClick={() => setIsOpen(false)}>Fighters</MobileLink>
             <MobileLink href="/contact" onClick={() => setIsOpen(false)}>Contact</MobileLink>
             <Button className="w-full bg-primary font-bold text-white uppercase mt-4">GET TICKETS</Button>
           </div>
