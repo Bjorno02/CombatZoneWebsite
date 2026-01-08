@@ -2,9 +2,11 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
 import { EventSection } from "@/components/home/EventSection";
-import { NewsSection } from "@/components/home/NewsSection";
+import { ChampionsSection } from "@/components/home/ChampionsSection";
 import { MerchSection } from "@/components/home/MerchSection";
 import { AboutSection } from "@/components/home/AboutSection";
+import { WhatIsCombatZone } from "@/components/home/WhatIsCombatZone";
+import { LinkPlaceholder } from "@/components/home/LinkPlaceholder";
 import { Trophy, Star, Users, History } from "lucide-react";
 
 export default function Home() {
@@ -15,6 +17,12 @@ export default function Home() {
       <main>
         {/* HERO: Carousel with interactive slides */}
         <Hero />
+
+        {/* LINK PLACEHOLDER: Reserved for future link/button - breaks up large sections */}
+        <LinkPlaceholder />
+
+        {/* WHAT IS COMBAT ZONE: Clear explanation of what CombatZone is */}
+        <WhatIsCombatZone />
 
         {/* CREDIBILITY STRIP: Quick stats/trust signals */}
         <section className="bg-primary py-8 text-white relative z-20">
@@ -50,8 +58,8 @@ export default function Home() {
         {/* ABOUT: Mission & Story */}
         <AboutSection />
 
-        {/* NEWS: Updates & Media */}
-        <NewsSection />
+        {/* CHAMPIONS: Title defenders from last event */}
+        <ChampionsSection />
 
         {/* SPONSOR CTA: Quick break for sponsors */}
         <section className="py-20 bg-slate-900 text-center px-4 relative overflow-hidden">
