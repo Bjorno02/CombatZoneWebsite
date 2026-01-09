@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Import downloaded stock images
-import slide1 from "@assets/stock_images/mma_stadium_crowd_ar_90b2859a.jpg";
-import slide2 from "@assets/stock_images/calvin_kattar_ufc_fi_3ff19113.jpg";
-import slide3 from "@assets/stock_images/calvin_kattar_ufc_fi_6020f9c3.jpg";
-import slide4 from "@assets/stock_images/calvin_kattar_ufc_po_8171904a.jpg";
+// Import Combat Zone MMA images
+import slide1 from "@assets/IMAGES/CombatZoneHero1.png";
+import slide2 from "@assets/IMAGES/CombatZoneHero2.jpg";
+import slide3 from "@assets/IMAGES/calvin_kattar_ufc_po_8171904a.jpg";
 
 const SLIDES = [
   {
@@ -24,24 +23,15 @@ const SLIDES = [
   {
     id: 2,
     image: slide2,
-    title: "KATTAR VS EMMETT",
-    subtitle: "MAIN EVENT PREVIEW",
-    cta: "WATCH TRAILER",
-    secondaryCta: "READ MORE",
+    title: "CHAMPIONS RISING",
+    subtitle: "WHERE LEGENDS ARE MADE",
+    cta: "VIEW FIGHTERS",
+    secondaryCta: "SEE CHAMPIONS",
     align: "left",
   },
   {
     id: 3,
     image: slide3,
-    title: "UNSTOPPABLE FORCE",
-    subtitle: "THE RISE OF A CHAMPION",
-    cta: "FULL STORY",
-    secondaryCta: null,
-    align: "right",
-  },
-  {
-    id: 4,
-    image: slide4,
     title: "OFFICIAL MERCH",
     subtitle: "WEAR THE BATTLE",
     cta: "SHOP NOW",

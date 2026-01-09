@@ -1,12 +1,15 @@
 import { Calendar, MapPin, Ticket, ChevronRight, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import eventImg from "@assets/stock_images/calvin_kattar_ufc_fi_3ff19113.jpg";
+import eventPoster from "@assets/IMAGES/CombatZone91Poster.png";
 
 export function EventSection() {
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-        {/* Decorative Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        {/* Paper Texture Background */}
+        <div className="absolute inset-0 opacity-[0.5] bg-[url('https://www.transparenttextures.com/patterns/paper.png')]"></div>
+        
+        {/* Subtle Warm Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-slate-50/30"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 border-b-2 border-slate-100 pb-6">
@@ -21,79 +24,83 @@ export function EventSection() {
           </Button>
         </div>
 
-        {/* Featured Event Card */}
-        <div className="bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] grid grid-cols-1 lg:grid-cols-12 overflow-hidden border border-slate-200 group">
+        {/* Featured Event Layout - Separated Boxes */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
           
-          {/* Date Column (Desktop: Left, Mobile: Top) */}
-          <div className="lg:col-span-2 bg-slate-900 text-white p-6 flex flex-row lg:flex-col justify-between lg:justify-center items-center text-center lg:border-r border-white/10 relative overflow-hidden">
-             {/* Background Pattern */}
-             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-             
-             <div className="flex flex-col items-center z-10">
-                <span className="text-sm lg:text-lg font-bold text-gray-400 uppercase tracking-[0.2em]">FEB</span>
-                <span className="text-4xl lg:text-7xl font-bold font-[Chakra_Petch] leading-none my-0 lg:my-2 text-primary">21</span>
-                <span className="text-sm lg:text-lg font-bold text-gray-400">SAT</span>
-             </div>
-             
-             <div className="flex items-center gap-2 mt-0 lg:mt-6 text-xs lg:text-sm text-gray-300 font-mono bg-white/10 px-3 py-1 rounded z-10">
-                <Clock size={14} /> 10:00 PM EST
-             </div>
-          </div>
-
-          {/* Main Image */}
-          <div className="lg:col-span-6 relative h-[250px] md:h-[400px] lg:h-auto overflow-hidden">
-            <img
-              src={eventImg}
-              alt="CZ 91 Main Event"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0"
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent lg:bg-gradient-to-r" />
-            
-            <div className="absolute bottom-6 left-6 z-20">
-                <span className="bg-primary text-white px-3 py-1 text-sm font-bold uppercase skew-x-[-10deg] inline-block mb-2">
-                    <span className="skew-x-[10deg]">Heavyweight Title</span>
-                </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-white font-[Chakra_Petch] uppercase italic leading-none drop-shadow-md">
-                    KATTAR <span className="text-primary">VS</span> EMMETT
-                </h2>
+          {/* Event Poster - Left Side, Larger */}
+          <div className="lg:col-span-7 bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-200 overflow-hidden rounded-lg group">
+            <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden bg-slate-900 flex items-center justify-center px-2 md:px-3 py-4 md:py-6">
+              {/* Side border accent design */}
+              <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/40 opacity-60"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/40 opacity-60"></div>
+              
+              {/* Subtle corner accents */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/30"></div>
+              <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/30"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary/30"></div>
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/30"></div>
+              
+              <img
+                src={eventPoster}
+                alt="Combat Zone 91 Event Poster"
+                className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-[1.02] relative z-10"
+              />
             </div>
           </div>
 
-          {/* Info Side */}
-          <div className="lg:col-span-4 p-8 flex flex-col justify-center bg-white border-l border-slate-100">
-            <div className="flex items-start gap-3 mb-6">
+          {/* Right Side - Date Box and Info Box */}
+          <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6">
+            {/* Date Box - Separated */}
+            <div className="bg-slate-900 text-white p-6 flex flex-col justify-center items-center text-center relative overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-200 rounded-lg">
+               {/* Background Pattern */}
+               <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+               
+               <div className="flex flex-col items-center z-10">
+                  <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.2em]">FEB</span>
+                  <span className="text-5xl md:text-6xl font-bold font-[Chakra_Petch] leading-none my-2 text-primary">21</span>
+                  <span className="text-sm font-bold text-gray-400">SAT</span>
+                  <div className="flex items-center gap-2 mt-4 text-xs text-gray-300 font-mono bg-white/10 px-3 py-1 rounded">
+                    <Clock size={14} /> 10:00 PM EST
+                  </div>
+               </div>
+            </div>
+
+            {/* Location & Info Box - Separated */}
+            <div className="bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-200 rounded-lg p-6 flex flex-col justify-center">
+              <div className="flex items-start gap-3 mb-4">
                 <MapPin className="text-primary mt-1" size={20} />
                 <div>
-                    <h4 className="text-lg font-bold text-slate-900 uppercase">SNHU Arena</h4>
-                    <p className="text-slate-500 text-sm">Manchester, New Hampshire</p>
+                  <h4 className="text-lg font-bold text-slate-900 uppercase">SNHU Arena</h4>
+                  <p className="text-slate-500 text-sm">Manchester, New Hampshire</p>
                 </div>
-            </div>
+              </div>
 
-            <div className="space-y-0 mb-8 border border-slate-200 divide-y divide-slate-200">
-               <div className="flex items-center justify-between p-4 bg-slate-50">
-                  <span className="font-bold text-slate-700 text-sm uppercase">MAIN CARD</span>
-                  <span className="text-primary font-bold text-sm">5 BOUTS</span>
-               </div>
-               <div className="flex items-center justify-between p-4">
-                  <span className="font-bold text-slate-700 text-sm uppercase">PRELIMS</span>
-                  <span className="text-slate-500 font-bold text-sm">7 BOUTS</span>
-               </div>
-               <div className="flex items-center justify-between p-4">
-                  <span className="font-bold text-slate-700 text-sm uppercase">EARLY PRELIMS</span>
-                  <span className="text-slate-500 font-bold text-sm">3 BOUTS</span>
-               </div>
-            </div>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center justify-between p-2 bg-slate-50 rounded">
+                  <span className="font-bold text-slate-700 text-xs uppercase">MAIN CARD</span>
+                  <span className="text-primary font-bold text-xs">5 BOUTS</span>
+                </div>
+                <div className="flex items-center justify-between p-2 rounded">
+                  <span className="font-bold text-slate-700 text-xs uppercase">PRELIMS</span>
+                  <span className="text-slate-500 font-bold text-xs">7 BOUTS</span>
+                </div>
+                <div className="flex items-center justify-between p-2 rounded">
+                  <span className="font-bold text-slate-700 text-xs uppercase">EARLY PRELIMS</span>
+                  <span className="text-slate-500 font-bold text-xs">3 BOUTS</span>
+                </div>
+              </div>
 
-            <div className="flex flex-col gap-3 mt-auto">
-              <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider shadow-lg shadow-primary/20 h-14 text-lg skew-x-[-5deg]">
-                <span className="skew-x-[5deg] flex items-center justify-center gap-2">
+              {/* CTA Buttons */}
+              <div className="flex flex-col gap-3 mt-auto">
+                <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider shadow-lg shadow-primary/20 h-12 text-base skew-x-[-5deg]">
+                  <span className="skew-x-[5deg] flex items-center justify-center gap-2">
                     <Ticket className="w-5 h-5" /> Get Tickets
-                </span>
-              </Button>
-              <Button size="lg" variant="outline" className="w-full border-2 border-slate-200 text-slate-900 hover:border-slate-900 hover:bg-transparent font-bold uppercase tracking-wider h-12 skew-x-[-5deg]">
-                <span className="skew-x-[5deg]">View Fight Card</span>
-              </Button>
+                  </span>
+                </Button>
+                <Button size="lg" variant="outline" className="w-full border-2 border-slate-200 text-slate-900 hover:border-slate-900 hover:bg-transparent font-bold uppercase tracking-wider h-10 text-sm skew-x-[-5deg]">
+                  <span className="skew-x-[5deg]">View Fight Card</span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

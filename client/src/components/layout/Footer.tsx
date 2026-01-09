@@ -30,57 +30,26 @@ export function Footer() {
         </div>
 
         {/* Main Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
-          <div className="col-span-2 lg:col-span-2">
+        <div className="flex justify-center mb-16">
+          <div className="text-center max-w-2xl">
             <Link href="/">
                 <a className="text-2xl font-bold italic tracking-tighter text-white font-[Chakra_Petch] mb-6 block">
                 COMBAT<span className="text-primary">ZONE</span>
                 </a>
             </Link>
-            <p className="text-slate-400 text-sm max-w-sm mb-6 leading-relaxed">
+            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
               New England's longest-running MMA promotion. Owned and operated by UFC veteran Calvin Kattar. The proving ground for the region's top talent chasing the big stage.
             </p>
-            <div className="flex items-center gap-2 text-slate-400 text-sm mb-2">
-                <MapPin size={16} className="text-primary" />
-                <span>SNHU Arena, Manchester, NH</span>
+            <div className="flex flex-col items-center gap-2 text-slate-400 text-sm">
+                <div className="flex items-center gap-2">
+                    <MapPin size={16} className="text-primary" />
+                    <span>SNHU Arena, Manchester, NH</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Mail size={16} className="text-primary" />
+                    <span>info@combatzonemma.com</span>
+                </div>
             </div>
-            <div className="flex items-center gap-2 text-slate-400 text-sm">
-                <Mail size={16} className="text-primary" />
-                <span>info@combatzonemma.com</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-bold font-[Chakra_Petch] uppercase tracking-wider mb-6 text-primary">Company</h4>
-            <ul className="space-y-3 text-sm text-slate-300">
-              <li><Link href="/about"><a className="hover:text-white transition-colors">About Us</a></Link></li>
-              <li><Link href="/about"><a className="hover:text-white transition-colors">Mission & Values</a></Link></li>
-              <li><Link href="/about"><a className="hover:text-white transition-colors">Leadership</a></Link></li>
-              <li><Link href="/contact"><a className="hover:text-white transition-colors">Contact</a></Link></li>
-              <li><Link href="/contact"><a className="hover:text-white transition-colors">Careers</a></Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold font-[Chakra_Petch] uppercase tracking-wider mb-6 text-primary">Events</h4>
-            <ul className="space-y-3 text-sm text-slate-300">
-              <li><Link href="/events"><a className="hover:text-white transition-colors">Upcoming Events</a></Link></li>
-              <li><Link href="/results"><a className="hover:text-white transition-colors">Past Results</a></Link></li>
-              <li><Link href="/vip"><a className="hover:text-white transition-colors">VIP Experience</a></Link></li>
-              <li><Link href="/tickets"><a className="hover:text-white transition-colors">Group Sales</a></Link></li>
-              <li><Link href="/arena"><a className="hover:text-white transition-colors">Arena Info</a></Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold font-[Chakra_Petch] uppercase tracking-wider mb-6 text-primary">Fighters</h4>
-            <ul className="space-y-3 text-sm text-slate-300">
-              <li><Link href="/fighters"><a className="hover:text-white transition-colors">Roster</a></Link></li>
-              <li><Link href="/champions"><a className="hover:text-white transition-colors">Champions</a></Link></li>
-              <li><Link href="/apply"><a className="hover:text-white transition-colors">Fighter Application</a></Link></li>
-              <li><Link href="/forms"><a className="hover:text-white transition-colors">Medical Forms</a></Link></li>
-              <li><Link href="/media"><a className="hover:text-white transition-colors">Photo Access</a></Link></li>
-            </ul>
           </div>
         </div>
 

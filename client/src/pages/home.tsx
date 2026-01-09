@@ -5,8 +5,7 @@ import { EventSection } from "@/components/home/EventSection";
 import { ChampionsSection } from "@/components/home/ChampionsSection";
 import { MerchSection } from "@/components/home/MerchSection";
 import { AboutSection } from "@/components/home/AboutSection";
-import { WhatIsCombatZone } from "@/components/home/WhatIsCombatZone";
-import { LinkPlaceholder } from "@/components/home/LinkPlaceholder";
+import { WhatIsCombatZoneWithLink } from "@/components/home/WhatIsCombatZoneWithLink";
 import { Trophy, Star, Users, History } from "lucide-react";
 
 export default function Home() {
@@ -15,16 +14,10 @@ export default function Home() {
       <Navbar />
       
       <main>
-        {/* HERO: Carousel with interactive slides */}
+        {/* 1. HERO: Carousel with interactive slides - Maximum visual impact */}
         <Hero />
 
-        {/* LINK PLACEHOLDER: Reserved for future link/button - breaks up large sections */}
-        <LinkPlaceholder />
-
-        {/* WHAT IS COMBAT ZONE: Clear explanation of what CombatZone is */}
-        <WhatIsCombatZone />
-
-        {/* CREDIBILITY STRIP: Quick stats/trust signals */}
+        {/* 2. CREDIBILITY STRIP: Quick stats/trust signals - Builds immediate credibility */}
         <section className="bg-primary py-8 text-white relative z-20">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
@@ -52,16 +45,22 @@ export default function Home() {
             </div>
         </section>
 
-        {/* EVENTS: Upcoming & Featured */}
+        {/* 3. EVENTS: Upcoming & Featured - Primary CTA (tickets), most important content */}
         <EventSection />
 
-        {/* ABOUT: Mission & Story */}
-        <AboutSection />
+        {/* 4. WHAT IS COMBAT ZONE + LINK: Side-by-side explanation and action */}
+        <WhatIsCombatZoneWithLink />
 
-        {/* CHAMPIONS: Title defenders from last event */}
+        {/* 5. CHAMPIONS: Title defenders from last event - Social proof, excitement */}
         <ChampionsSection />
 
-        {/* SPONSOR CTA: Quick break for sponsors */}
+        {/* 6. ABOUT: Mission & Story - Builds deeper brand connection */}
+        <AboutSection />
+
+        {/* 7. STORE: Merch - Secondary action, commerce opportunity */}
+        <MerchSection />
+
+        {/* 8. SPONSOR CTA: Business opportunity - Least urgent for general visitors */}
         <section className="py-20 bg-slate-900 text-center px-4 relative overflow-hidden">
              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]"></div>
              <div className="relative z-10 max-w-3xl mx-auto">
@@ -70,16 +69,13 @@ export default function Home() {
                     Align Your Brand With Greatness
                 </h2>
                 <p className="text-slate-400 text-lg mb-8">
-                    Connect with a passionate, loyal audience at New England's premier combat sports events.
+                    Connect with a passionate, loyal audience that can only be found at Combat Zone.
                 </p>
                 <button className="bg-white text-slate-900 hover:bg-slate-200 font-bold uppercase px-8 py-4 rounded-none transition-colors">
                     Become a Sponsor
                 </button>
              </div>
         </section>
-
-        {/* STORE: Merch */}
-        <MerchSection />
       </main>
 
       <Footer />

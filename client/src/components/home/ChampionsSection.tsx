@@ -1,53 +1,44 @@
 import { Trophy, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import champImg1 from "@assets/stock_images/calvin_kattar_ufc_fi_3ff19113.jpg";
-import champImg2 from "@assets/stock_images/calvin_kattar_ufc_fi_5a5c7130.jpg";
-import champImg3 from "@assets/stock_images/calvin_kattar_ufc_po_8171904a.jpg";
+import elvinJohnsonImg from "@assets/IMAGES/CZ90ChampElvinJohnson.jpg";
+import connorMorrillImg from "@assets/IMAGES/CZ90ChampConnorMorrill.jpg";
 
 const CHAMPIONS = [
   {
     id: 1,
-    name: "JOHN 'THE HAMMER' SMITH",
-    weightClass: "Heavyweight",
-    defenses: 2,
-    image: champImg1,
-    event: "Combat Zone 90"
+    name: "Elvin Johnson",
+    weightClass: "Middleweight",
+    defenses: 1,
+    image: elvinJohnsonImg,
+    event: "Combat Zone 90",
+    discipline: "Kickboxing"
   },
   {
     id: 2,
-    name: "MIKE 'IRON FIST' JOHNSON",
-    weightClass: "Middleweight",
+    name: "Connor Morrill",
+    weightClass: "Bantamweight",
     defenses: 1,
-    image: champImg2,
-    event: "Combat Zone 90"
-  },
-  {
-    id: 3,
-    name: "ALEX 'THE TANK' MARTINEZ",
-    weightClass: "Lightweight",
-    defenses: 3,
-    image: champImg3,
-    event: "Combat Zone 90"
-  },
+    image: connorMorrillImg,
+    event: "Combat Zone 90",
+    discipline: "Kickboxing"
+  }
 ];
 
 export function ChampionsSection() {
   return (
     <section className="py-16 md:py-24 bg-gray-100">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-[Chakra_Petch] uppercase tracking-tight leading-none">
-              TITLE <span className="text-primary">DEFENDERS</span>
-            </h2>
-            <p className="text-slate-600 mt-2 text-sm uppercase tracking-wider font-bold">
-              Champions Who Retained at Combat Zone 90
-            </p>
-            <div className="w-24 h-1 bg-primary mt-2"></div>
-          </div>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-[Chakra_Petch] uppercase tracking-tight leading-none">
+            CZ 90 <span className="text-primary">Champions</span>
+          </h2>
+          <p className="text-slate-600 mt-2 text-sm uppercase tracking-wider font-bold">
+            Championship Fight Winners from Combat Zone 90
+          </p>
+          <div className="w-24 h-1 bg-primary mt-2 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {CHAMPIONS.map((champion) => (
             <div
               key={champion.id}
@@ -84,7 +75,7 @@ export function ChampionsSection() {
                   {champion.name}
                 </h3>
                 <p className="text-slate-600 text-sm font-semibold uppercase tracking-wide mb-4">
-                  {champion.weightClass} Champion
+                  {champion.weightClass} {champion.discipline} Champion
                 </p>
                 <div className="mt-auto pt-4 border-t border-gray-100">
                   <p className="text-slate-500 text-xs font-bold uppercase tracking-wide">
