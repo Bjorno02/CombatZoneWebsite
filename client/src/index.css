@@ -113,6 +113,10 @@
     font-family: var(--font-heading);
     @apply uppercase tracking-normal font-bold;
   }
+  /* Improve touch targets on mobile */
+  button, a {
+    @apply touch-manipulation;
+  }
 }
 
 /* Smooth scroll reveal animations */

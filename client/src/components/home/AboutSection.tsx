@@ -4,22 +4,26 @@ import calvinKattarImg from "@assets/IMAGES/CZCalvinKattarFiller.jpg";
 
 export function AboutSection() {
     return (
-        <section className="py-24 md:py-32 pb-40 md:pb-48 bg-white relative overflow-visible -mt-8">
+        <section className="py-16 md:py-24 lg:py-32 pb-16 md:pb-32 lg:pb-48 bg-white relative overflow-hidden md:overflow-visible -mt-8">
             
             <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
                 <div className="flex justify-center">
                     {/* Overlapping Cards Container - positioned so 25% from left of picture is at center */}
-                    <div className="relative w-full max-w-6xl scroll-reveal -mt-20 translate-x-[16%] lg:translate-x-[14%]">
-                        {/* Image Card - Base Layer - Smaller, positioned higher */}
-                        <div className="aspect-[4/3] w-full max-w-xl mx-auto relative overflow-visible shadow-2xl transform -rotate-1">
-                            <img 
-                                src={calvinKattarImg} 
-                                alt="Calvin Kattar" 
-                                className="w-full h-full object-cover"
-                            />
+                    <div className="relative w-full max-w-6xl scroll-reveal -mt-8 md:-mt-12 lg:-mt-20 translate-x-0 md:translate-x-[16%] lg:translate-x-[14%]">
+                        {/* Mobile: Stack layout */}
+                        <div className="flex flex-col md:block">
+                            {/* Image Card - Base Layer - Smaller, positioned higher */}
+                            <div className="aspect-[4/3] w-full max-w-xl mx-auto relative overflow-hidden md:overflow-visible shadow-2xl transform -rotate-0 md:-rotate-1 mb-6 md:mb-0">
+                                <img 
+                                    src={calvinKattarImg} 
+                                    alt="Calvin Kattar" 
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
                             
-                            {/* Text Card - Overlapping at bottom-right with slight rotation for visual interest */}
-                            <div className="absolute top-[40%] right-0 lg:right-80 xl:right-96 bg-white shadow-2xl p-6 md:p-8 w-full lg:w-[95%] max-w-3xl transform rotate-1 scroll-reveal scroll-reveal-delay-1 z-10">
+                            {/* Text Card - Stacked on mobile, overlapping on desktop */}
+                            <div className="relative md:absolute md:top-[40%] md:right-0 lg:right-80 xl:right-96 bg-white shadow-2xl p-6 md:p-8 w-full lg:w-[95%] max-w-3xl transform rotate-0 md:rotate-1 scroll-reveal scroll-reveal-delay-1 z-10 md:mt-0">
                             <span className="text-primary font-bold tracking-[0.2em] text-sm uppercase mb-3 block">Our Story</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-[Chakra_Petch] uppercase italic leading-tight mb-4">
                                 From the Octagon to <span className="text-primary">Ownership</span>
@@ -69,7 +73,7 @@ export function AboutSection() {
                                 </div>
                             </div>
 
-                            <Button variant="outline" className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase px-6 py-4 rounded-none text-sm">
+                            <Button variant="outline" className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase px-6 py-4 rounded-none text-sm w-full sm:w-auto">
                                 Read Our Story
                             </Button>
                             </div>

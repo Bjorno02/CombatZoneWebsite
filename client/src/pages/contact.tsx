@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { PageLayout } from "@/components/layout/PageLayout";
+import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,20 +7,10 @@ import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans pt-20">
-      <Navbar />
-      
-      {/* Hero */}
-      <section className="bg-black text-white py-24 md:py-32">
-        <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16">
-          <span className="text-primary font-bold tracking-[0.2em] uppercase mb-4 block">Get in Touch</span>
-          <h1 className="text-5xl md:text-7xl font-bold font-[Chakra_Petch] uppercase max-w-4xl">Contact Us</h1>
-        </div>
-      </section>
-
+    <PageLayout className="pt-20">
       {/* Content */}
       <section className="py-24 md:py-32">
-        <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16">
+        <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
             {/* Form */}
             <div className="max-w-xl">
@@ -96,10 +86,8 @@ export default function ContactPage() {
                 </div>
                 </div>
             </div>
-        </div>
+        </Container>
       </section>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }

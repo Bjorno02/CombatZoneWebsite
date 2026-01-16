@@ -35,7 +35,7 @@ export function PPVSection() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase px-8 py-6 rounded-none cursor-not-allowed opacity-60"
+              className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase px-6 sm:px-8 py-5 sm:py-6 rounded-none cursor-not-allowed opacity-60 w-full sm:w-auto"
               disabled
             >
               Link Coming Soon

@@ -71,6 +71,7 @@ export function ChampionsSection() {
                   src={champion.image}
                   alt={champion.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                  loading="lazy"
                 />
                 <div className="absolute top-0 left-0 bg-primary text-white text-xs font-bold uppercase px-3 py-1 skew-x-[-10deg] ml-[-5px]">
                   <span className="skew-x-[10deg] block pl-1">{champion.weightClass}</span>
@@ -110,7 +111,7 @@ export function ChampionsSection() {
         </div>
 
         <div className="text-center mt-16">
-          <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-800 font-bold uppercase px-8 py-6 rounded-none">
+          <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-800 font-bold uppercase px-6 sm:px-8 py-5 sm:py-6 rounded-none w-full sm:w-auto">
             View All Champions
           </Button>
         </div>

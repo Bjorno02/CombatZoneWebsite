@@ -63,7 +63,7 @@ export function WhatIsCombatZoneSection() {
               </div>
               
               {/* Right side - takes 5 columns, feature cards - positioned at 25% from top */}
-              <div className="lg:col-span-5 space-y-4 scroll-reveal scroll-reveal-delay-1 lg:mt-[25%]">
+              <div className="lg:col-span-5 space-y-4 scroll-reveal scroll-reveal-delay-1 lg:mt-[25%] mt-8 lg:mt-[25%]">
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-lg hover:bg-white/15 transition-all">
                   <h3 className="text-lg font-bold font-[Chakra_Petch] uppercase text-white mb-2">Championship</h3>
                   <p className="text-sm text-slate-300">Professional title fights</p>

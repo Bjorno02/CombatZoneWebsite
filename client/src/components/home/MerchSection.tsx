@@ -4,12 +4,12 @@ import merchImg from "@assets/IMAGES/CZMerchFiller.jpg";
 
 export function MerchSection() {
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden -mt-8">
+    <section className="py-16 md:py-20 lg:py-28 bg-white relative overflow-hidden mt-8 md:-mt-8">
       {/* Subtle background texture - diagonal stripes */}
       <div className="absolute inset-0 opacity-[0.35] bg-[repeating-linear-gradient(45deg,transparent,transparent_8px,rgba(0,0,0,0.08)_8px,rgba(0,0,0,0.08)_9px)]"></div>
       
       {/* Flowing transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/20 via-black/10 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 md:h-32 bg-gradient-to-t from-black/20 via-black/10 to-transparent"></div>
       
       {/* Subtle diagonal accent line - flows through sections */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
@@ -34,13 +34,13 @@ export function MerchSection() {
               Get the latest official Combat Zone apparel. Hoodies, Tees, and Fight Kits available now. Represent the promotion that built New England's top fighters.
             </p>
             
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider shadow-lg shadow-primary/20 px-8 py-6 rounded-none skew-x-[-5deg]">
-                <span className="skew-x-[5deg] flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider shadow-lg shadow-primary/20 px-6 sm:px-8 py-5 sm:py-6 rounded-none skew-x-[-5deg] w-full sm:w-auto">
+                <span className="skew-x-[5deg] flex items-center justify-center gap-2">
                   <ShoppingBag className="w-5 h-5" /> Shop Now
                 </span>
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase tracking-wider px-8 py-6 rounded-none skew-x-[-5deg]">
+              <Button size="lg" variant="outline" className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase tracking-wider px-6 sm:px-8 py-5 sm:py-6 rounded-none skew-x-[-5deg] w-full sm:w-auto">
                 <span className="skew-x-[5deg]">View Collection</span>
               </Button>
             </div>
@@ -63,6 +63,7 @@ export function MerchSection() {
                 src={merchImg} 
                 alt="CZ Merch" 
                 className="relative z-10 w-full max-w-[400px] object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                loading="lazy"
               />
             </div>
           </div>

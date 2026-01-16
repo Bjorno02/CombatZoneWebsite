@@ -26,7 +26,7 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/10 via-white/5 to-transparent"></div>
             
             <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center divide-x divide-white/20">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
                     <div className="flex flex-col items-center">
                         <History className="mb-2 w-8 h-8 opacity-80" />
                         <span className="text-3xl font-bold font-[Chakra_Petch]">24+</span>
@@ -83,7 +83,7 @@ export default function Home() {
                 <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto scroll-reveal scroll-reveal-delay-2">
                     Connect with a passionate, loyal audience that can only be found at Combat Zone.
                 </p>
-                <button className="bg-white text-slate-900 hover:bg-slate-200 font-bold uppercase px-8 py-4 rounded-none transition-colors scroll-reveal scroll-reveal-delay-3">
+                <button className="bg-white text-slate-900 hover:bg-slate-200 font-bold uppercase px-6 sm:px-8 py-3 sm:py-4 rounded-none transition-colors scroll-reveal scroll-reveal-delay-3 w-full sm:w-auto">
                     Become a Sponsor
                 </button>
              </div>

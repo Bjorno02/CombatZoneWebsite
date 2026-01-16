@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
+import { TICKETMASTER_EVENT_URL } from "@/lib/constants";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -75,6 +76,7 @@ export function Hero() {
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-full object-cover"
+                loading="eager"
               />
               
               {/* Overlays */}
@@ -92,21 +94,29 @@ export function Hero() {
                     <span className="inline-block py-1 px-3 bg-primary text-white text-sm font-bold tracking-widest uppercase mb-2 skew-x-[-10deg]">
                         <span className="skew-x-[10deg]">{slide.subtitle}</span>
                     </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white font-[Chakra_Petch] leading-[0.9] italic drop-shadow-lg uppercase">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white font-[Chakra_Petch] leading-[0.9] italic drop-shadow-lg uppercase px-4">
                         {slide.title}
                     </h1>
                     
                     <div className={cn(
-                        "flex flex-wrap gap-4 pt-4",
-                        slide.align === "center" && "justify-center",
-                        slide.align === "left" && "justify-start",
-                        slide.align === "right" && "justify-end"
+                        "flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 w-full sm:w-auto",
+                        slide.align === "center" && "items-center justify-center",
+                        slide.align === "left" && "items-start justify-start",
+                        slide.align === "right" && "items-end justify-end"
                     )}>
-                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-7 text-xl font-bold uppercase tracking-wider skew-x-[-10deg] min-w-[220px] rounded-none shadow-[0_0_20px_rgba(220,20,60,0.3)] transition-transform hover:scale-105">
+                        {slide.cta === "GET TICKETS" ? (
+                          <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
+                            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-7 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider skew-x-[-10deg] w-full sm:w-auto sm:min-w-[200px] md:min-w-[220px] rounded-none shadow-[0_0_20px_rgba(220,20,60,0.3)] transition-transform hover:scale-105">
+                              <span className="skew-x-[10deg]">{slide.cta}</span>
+                            </Button>
+                          </a>
+                        ) : (
+                          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-7 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider skew-x-[-10deg] w-full sm:w-auto sm:min-w-[200px] md:min-w-[220px] rounded-none shadow-[0_0_20px_rgba(220,20,60,0.3)] transition-transform hover:scale-105">
                             <span className="skew-x-[10deg]">{slide.cta}</span>
-                        </Button>
+                          </Button>
+                        )}
                         {slide.secondaryCta && (
-                            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-7 text-xl font-bold uppercase tracking-wider skew-x-[-10deg] min-w-[220px] rounded-none backdrop-blur-sm transition-transform hover:scale-105">
+                            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black px-6 sm:px-8 py-5 sm:py-7 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider skew-x-[-10deg] w-full sm:w-auto sm:min-w-[200px] md:min-w-[220px] rounded-none backdrop-blur-sm transition-transform hover:scale-105">
                                 <span className="skew-x-[10deg]">{slide.secondaryCta}</span>
                             </Button>
                         )}

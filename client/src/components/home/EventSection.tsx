@@ -1,5 +1,6 @@
 import { Calendar, MapPin, Ticket, ChevronRight, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TICKETMASTER_EVENT_URL } from "@/lib/constants";
 import eventPoster from "@assets/IMAGES/CombatZone91Poster.png";
 
 export function EventSection() {
@@ -25,14 +26,14 @@ export function EventSection() {
         <div className="absolute bottom-1/4 left-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
 
       <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8 border-b-2 border-slate-100 pb-8 scroll-reveal">
-          <div className="text-center md:text-left">
-            <h2 className="text-primary font-bold tracking-[0.2em] text-sm mb-1 uppercase">Next Live Event</h2>
-            <h3 className="text-4xl md:text-6xl font-bold text-slate-900 font-[Chakra_Petch] uppercase italic">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-12 md:mb-16 gap-6 md:gap-8 border-b-2 border-slate-100 pb-6 md:pb-8 scroll-reveal">
+          <div className="text-center md:text-left w-full md:w-auto">
+            <h2 className="text-primary font-bold tracking-[0.2em] text-xs sm:text-sm mb-1 uppercase">Next Live Event</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 font-[Chakra_Petch] uppercase italic">
               Combat Zone <span className="text-primary">91</span>
             </h3>
           </div>
-          <Button variant="outline" className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white uppercase tracking-widest font-bold group px-8 py-6 rounded-none transition-all">
+          <Button variant="outline" className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white uppercase tracking-widest font-bold group px-6 sm:px-8 py-5 sm:py-6 rounded-none transition-all w-full md:w-auto">
             Full Schedule <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
@@ -46,6 +47,7 @@ export function EventSection() {
               src={eventPoster}
               alt="Combat Zone 91 Event Poster"
               className="w-full max-w-none h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02] shadow-2xl"
+              loading="lazy"
             />
           </div>
 
@@ -93,12 +95,14 @@ export function EventSection() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col gap-3 mt-auto">
-                <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider shadow-lg shadow-primary/20 h-12 text-base skew-x-[-5deg]">
-                  <span className="skew-x-[5deg] flex items-center justify-center gap-2">
-                    <Ticket className="w-5 h-5" /> Get Tickets
-                  </span>
-                </Button>
-                <Button size="lg" variant="outline" className="w-full border-2 border-slate-200 text-slate-900 hover:border-slate-900 hover:bg-transparent font-bold uppercase tracking-wider h-10 text-sm skew-x-[-5deg]">
+                <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider shadow-lg shadow-primary/20 h-11 sm:h-12 text-sm sm:text-base skew-x-[-5deg]">
+                    <span className="skew-x-[5deg] flex items-center justify-center gap-2">
+                      <Ticket className="w-4 h-4 sm:w-5 sm:h-5" /> Get Tickets
+                    </span>
+                  </Button>
+                </a>
+                <Button size="lg" variant="outline" className="w-full border-2 border-slate-200 text-slate-900 hover:border-slate-900 hover:bg-transparent font-bold uppercase tracking-wider h-9 sm:h-10 text-xs sm:text-sm skew-x-[-5deg]">
                   <span className="skew-x-[5deg]">View Fight Card</span>
                 </Button>
               </div>
