@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { TICKETMASTER_EVENT_URL } from "@/lib/constants";
 import { Star, Crown, Users, Camera, UtensilsCrossed, Ticket, CheckCircle2, MapPin, HelpCircle } from "lucide-react";
+import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
 import vip1Img from "@assets/IMAGES/VIP1.jpg";
 import vip2Img from "@assets/IMAGES/VIP2.jpg";
 import vip3Img from "@assets/IMAGES/VIP3.jpg";
@@ -80,6 +81,8 @@ const FAQS = [
 ];
 
 export default function VIPPage() {
+  useSEO(SEO_CONFIG.vip);
+  
   return (
     <PageLayout>
       <PageHero 

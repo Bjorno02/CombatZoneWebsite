@@ -1,5 +1,6 @@
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { SkipToContent } from "../SkipToContent";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -16,8 +17,11 @@ export function PageLayout({
 }: PageLayoutProps) {
   return (
     <div className={`min-h-screen bg-background text-foreground font-sans ${className}`}>
+      <SkipToContent />
       {showNavbar && <Navbar />}
-      {children}
+      <main id="main-content">
+        {children}
+      </main>
       {showFooter && <Footer />}
     </div>
   );

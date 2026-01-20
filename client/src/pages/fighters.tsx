@@ -1,8 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
 
 export default function FightersPage() {
+  useSEO(SEO_CONFIG.fighters);
   return (
     <div className="min-h-screen bg-background text-foreground font-sans pt-20">
       <Navbar />

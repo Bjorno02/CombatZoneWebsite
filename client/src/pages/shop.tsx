@@ -2,8 +2,10 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
+import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
 
 export default function ShopPage() {
+  useSEO(SEO_CONFIG.shop);
   return (
     <PageLayout className="pt-20">
       <PageHero 

@@ -117,6 +117,23 @@
   button, a {
     @apply touch-manipulation;
   }
+  
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+  
+  /* Remove default focus for mouse users, keep for keyboard */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
 }
 
 /* Smooth scroll reveal animations */

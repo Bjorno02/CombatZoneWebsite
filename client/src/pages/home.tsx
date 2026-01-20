@@ -8,8 +8,10 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { PPVSection } from "@/components/home/PPVSection";
 import { WhatIsCombatZoneSection } from "@/components/home/WhatIsCombatZoneSection";
 import { Trophy, Star, Users, History } from "lucide-react";
+import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
 
 export default function Home() {
+  useSEO(SEO_CONFIG.home);
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white font-sans">
       <Navbar />

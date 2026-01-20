@@ -2,8 +2,10 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { Container } from "@/components/layout/Container";
 import { ExternalLink } from "lucide-react";
 import { YouTubeFeed } from "@/components/media/YouTubeFeed";
+import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
 
 export default function MediaPage() {
+  useSEO(SEO_CONFIG.media);
   return (
     <PageLayout className="pt-20">
       {/* Featured Video */}
