@@ -1,72 +1,144 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingBag } from "lucide-react";
-import merchImg from "@assets/IMAGES/CZMerchFiller.jpg";
+import { ShoppingBag, ArrowRight, Star } from "lucide-react";
+import { Link } from "wouter";
+// @ts-ignore - JPG extension case sensitivity
+import merchImg from "@assets/IMAGES/CZMERCH.JPG";
 
 export function MerchSection() {
   return (
-    <section className="py-16 md:py-20 lg:py-28 bg-white relative overflow-hidden mt-8 md:-mt-8">
-      {/* Subtle background texture - diagonal stripes */}
-      <div className="absolute inset-0 opacity-[0.35] bg-[repeating-linear-gradient(45deg,transparent,transparent_8px,rgba(0,0,0,0.08)_8px,rgba(0,0,0,0.08)_9px)]"></div>
-      
-      {/* Flowing transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 md:h-32 bg-gradient-to-t from-black/20 via-black/10 to-transparent"></div>
-      
-      {/* Subtle diagonal accent line - flows through sections */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-      
-      {/* Shared decorative geometric element */}
-      <div className="absolute top-1/3 right-0 w-44 h-44 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/3 left-0 w-36 h-36 bg-primary/5 rounded-full blur-2xl"></div>
-      
+    <section className="pt-32 md:pt-40 pb-24 md:pb-32 bg-zinc-900 relative overflow-visible z-10">
+      {/* Professional Texture - same as Champions section */}
+      <div className="absolute inset-0 opacity-[0.08] bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(255,255,255,0.1)_20px,rgba(255,255,255,0.1)_21px)]"></div>
+
+      {/* Subtle Dot Pattern Overlay */}
+      <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(circle,#ffffff_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+      {/* Gradient Mesh for Depth */}
+      <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.4),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(0,0,0,0.3),transparent_50%)]"></div>
+
+      {/* Clean divider line at TOP */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-white/20"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-primary"></div>
+
       <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
-          {/* Text Side */}
-          <div className="flex flex-col justify-center py-8 scroll-reveal">
-            <div className="mb-6">
-              <span className="text-primary font-bold tracking-[0.2em] text-sm uppercase mb-4 block">Official Gear</span>
-              <h2 className="text-4xl md:text-6xl font-bold font-[Chakra_Petch] uppercase italic leading-tight mb-6">
-                Wear the <span className="text-primary">Battle</span>
-              </h2>
-              <div className="w-24 h-1 bg-primary mb-8"></div>
-            </div>
-            
-            <p className="text-lg text-slate-700 max-w-xl leading-relaxed mb-8">
-              Get the latest official Combat Zone apparel. Hoodies, Tees, and Fight Kits available now. Represent the promotion that built New England's top fighters.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider shadow-lg shadow-primary/20 px-6 sm:px-8 py-5 sm:py-6 rounded-none skew-x-[-5deg] w-full sm:w-auto">
-                <span className="skew-x-[5deg] flex items-center justify-center gap-2">
-                  <ShoppingBag className="w-5 h-5" /> Shop Now
-                </span>
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase tracking-wider px-6 sm:px-8 py-5 sm:py-6 rounded-none skew-x-[-5deg] w-full sm:w-auto">
-                <span className="skew-x-[5deg]">View Collection</span>
-              </Button>
-            </div>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
+            <Star className="text-primary" size={14} />
+            <span className="text-white/80 text-sm font-bold uppercase tracking-wider">
+              Official Gear
+            </span>
           </div>
-          
-          {/* Image Side */}
-          <div className="relative flex items-center justify-center py-8 scroll-reveal scroll-reveal-delay-1">
-            <div className="relative bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-200 p-6 md:p-8 overflow-hidden group">
-              {/* Side border accent design - matching EventSection */}
-              <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/40 opacity-60"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/40 opacity-60"></div>
-              
-              {/* Subtle corner accents */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/30"></div>
-              <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/30"></div>
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary/30"></div>
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/30"></div>
-              
-              <img 
-                src={merchImg} 
-                alt="CZ Merch" 
-                className="relative z-10 w-full max-w-[400px] object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-[Chakra_Petch] text-white uppercase leading-[0.9] mb-6">
+            Wear the <span className="text-primary">Battle</span>
+          </h2>
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+            Rep the promotion that built New England's top fighters. Premium apparel that hits as
+            hard as our athletes.
+          </p>
+        </div>
+
+        {/* Main content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left - Featured Product Image */}
+          <div className="relative group">
+            {/* Glowing border effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary/50 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+
+            <div className="relative bg-black rounded-lg overflow-hidden border border-white/10">
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary z-10" />
+              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary z-10" />
+
+              {/* Badge */}
+              <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1.5 z-20 text-xs font-bold uppercase tracking-wider">
+                New Collection
+              </div>
+
+              <img
+                src={merchImg}
+                alt="Combat Zone Official Merchandise"
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
             </div>
           </div>
+
+          {/* Right - Product Info & Categories */}
+          <div className="text-white">
+            {/* Product categories */}
+            <div className="grid grid-cols-2 gap-4 mb-10">
+              <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
+                <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">01</div>
+                <div className="font-bold uppercase tracking-wider mb-1">Hoodies</div>
+                <div className="text-sm text-slate-500">Premium heavyweight</div>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
+                <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">02</div>
+                <div className="font-bold uppercase tracking-wider mb-1">T-Shirts</div>
+                <div className="text-sm text-slate-500">Event & signature tees</div>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
+                <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">03</div>
+                <div className="font-bold uppercase tracking-wider mb-1">Fight Kits</div>
+                <div className="text-sm text-slate-500">Official training gear</div>
+              </div>
+
+              <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
+                <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">04</div>
+                <div className="font-bold uppercase tracking-wider mb-1">Accessories</div>
+                <div className="text-sm text-slate-500">Hats, bags & more</div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <Link href="/shop">
+              <Button
+                size="lg"
+                className="w-full bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider h-16 text-lg group"
+              >
+                <ShoppingBag className="mr-3" size={22} />
+                Shop the Collection
+                <ArrowRight
+                  className="ml-3 group-hover:translate-x-1 transition-transform"
+                  size={22}
+                />
+              </Button>
+            </Link>
+
+            {/* Trust badges */}
+            <div className="flex items-center justify-center gap-8 mt-8 pt-8 border-t border-white/10">
+              <div className="text-center">
+                <div className="text-sm text-slate-600 uppercase tracking-wider">Free Shipping</div>
+                <div className="text-white font-bold">Orders $75+</div>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center">
+                <div className="text-sm text-slate-600 uppercase tracking-wider">Quality</div>
+                <div className="text-white font-bold">Premium Materials</div>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center">
+                <div className="text-sm text-slate-600 uppercase tracking-wider">Support</div>
+                <div className="text-white font-bold">Fighter-Owned</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Star separator at BOTTOM - closer together */}
+      <div className="absolute bottom-0 left-0 right-0 h-6 flex items-center justify-center z-[1]">
+        <div className="flex items-center gap-4 w-full max-w-4xl px-8">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+          <div className="flex gap-3">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className="w-3 h-3 fill-primary/40 text-primary/40" />
+            ))}
+          </div>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
         </div>
       </div>
     </section>

@@ -13,15 +13,15 @@ export function YouTubeFeed() {
       try {
         setLoading(true);
         setError(null);
-        
+
         const response = await fetch("/api/youtube/videos");
-        
+
         if (!response.ok) {
           const errorData = await response.json();
           throw new Error(errorData.error || "Failed to fetch videos");
         }
 
-        const data = await response.json() as YouTubeApiResponse;
+        const data = (await response.json()) as YouTubeApiResponse;
         setVideos(data.videos || []);
       } catch (error: unknown) {
         console.error("Error fetching YouTube videos:", error);
@@ -51,32 +51,52 @@ export function YouTubeFeed() {
 
   if (error) {
     return (
-      <div className="text-center py-12">
-        <p className="text-slate-600 mb-4">{error}</p>
-        <a
-          href="https://www.youtube.com/@CombatZoneMMA"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:text-primary/80 font-bold uppercase"
-        >
-          Visit YouTube Channel
-        </a>
+      <div className="text-center py-12 bg-slate-100 rounded-lg">
+        <div className="max-w-md mx-auto">
+          <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <PlayCircle className="text-white w-8 h-8" />
+          </div>
+          <h3 className="text-xl font-bold font-[Chakra_Petch] uppercase mb-2">Watch Our Videos</h3>
+          <p className="text-slate-600 mb-6">
+            Check out fight highlights, interviews, and behind-the-scenes content on our YouTube
+            channel.
+          </p>
+          <a
+            href="https://www.youtube.com/@CombatZoneMMA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-red-600 text-white hover:bg-red-700 font-bold uppercase tracking-wider px-6 py-3 transition-colors"
+          >
+            <PlayCircle size={20} />
+            Visit YouTube Channel
+          </a>
+        </div>
       </div>
     );
   }
 
   if (videos.length === 0) {
     return (
-      <div className="text-center py-12">
-        <p className="text-slate-600 mb-4">No videos found</p>
-        <a
-          href="https://www.youtube.com/@CombatZoneMMA"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:text-primary/80 font-bold uppercase"
-        >
-          Visit YouTube Channel
-        </a>
+      <div className="text-center py-12 bg-slate-100 rounded-lg">
+        <div className="max-w-md mx-auto">
+          <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <PlayCircle className="text-white w-8 h-8" />
+          </div>
+          <h3 className="text-xl font-bold font-[Chakra_Petch] uppercase mb-2">Watch Our Videos</h3>
+          <p className="text-slate-600 mb-6">
+            Check out fight highlights, interviews, and behind-the-scenes content on our YouTube
+            channel.
+          </p>
+          <a
+            href="https://www.youtube.com/@CombatZoneMMA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-red-600 text-white hover:bg-red-700 font-bold uppercase tracking-wider px-6 py-3 transition-colors"
+          >
+            <PlayCircle size={20} />
+            Visit YouTube Channel
+          </a>
+        </div>
       </div>
     );
   }
@@ -106,10 +126,10 @@ export function YouTubeFeed() {
             {video.title}
           </h3>
           <span className="text-xs text-slate-500 font-bold uppercase mt-1 block group-hover:text-slate-600 transition-colors">
-            {new Date(video.publishedAt).toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'short', 
-              day: 'numeric' 
+            {new Date(video.publishedAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
             })}
           </span>
         </a>

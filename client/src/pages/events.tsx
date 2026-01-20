@@ -15,7 +15,7 @@ export default function EventsPage() {
     <PageLayout>
       <SectionHero
         label="Live Events"
-        title="UPCOMING\nEVENTS"
+        title="UPCOMING EVENTS"
         highlightWord="EVENTS"
         description="Experience New England's premier MMA promotion live at SNHU Arena"
       />
@@ -26,7 +26,9 @@ export default function EventsPage() {
           <div className="flex flex-col md:flex-row items-center justify-between py-5 gap-4">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-              <span className="text-sm font-bold uppercase tracking-wider text-slate-900">Next Event</span>
+              <span className="text-sm font-bold uppercase tracking-wider text-slate-900">
+                Next Event
+              </span>
               <span className="text-slate-400">|</span>
               <span className="font-bold font-[Chakra_Petch] text-xl text-primary">CZ91</span>
               <span className="text-slate-400">|</span>
@@ -78,7 +80,9 @@ export default function EventsPage() {
             <div className="bg-white border border-slate-200 shadow-xl p-8 md:p-10">
               {/* Title */}
               <div className="text-center mb-8">
-                <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase">Next Live Event</span>
+                <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase">
+                  Next Live Event
+                </span>
                 <h2 className="text-4xl md:text-5xl font-bold font-[Chakra_Petch] text-slate-900 mt-3">
                   COMBAT ZONE <span className="text-primary">91</span>
                 </h2>
@@ -95,7 +99,7 @@ export default function EventsPage() {
                     <div className="text-sm text-slate-500">Saturday Night</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-200">
                   <div className="w-12 h-12 bg-white flex items-center justify-center border border-slate-200">
                     <Clock className="text-primary" size={22} />
@@ -105,7 +109,7 @@ export default function EventsPage() {
                     <div className="text-sm text-slate-500">Main Card</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-200">
                   <div className="w-12 h-12 bg-white flex items-center justify-center border border-slate-200">
                     <MapPin className="text-primary" size={22} />
@@ -120,15 +124,25 @@ export default function EventsPage() {
               {/* CTA Buttons */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wider h-14 text-lg group">
+                  <Button
+                    size="lg"
+                    className="w-full bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wider h-14 text-lg group"
+                  >
                     <Ticket className="mr-2" size={20} />
                     Get Tickets
-                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                    <ArrowRight
+                      className="ml-2 group-hover:translate-x-1 transition-transform"
+                      size={20}
+                    />
                   </Button>
                 </a>
-                
+
                 <Link href="/fight-card">
-                  <Button size="lg" variant="outline" className="w-full border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase tracking-wider h-14 text-lg">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase tracking-wider h-14 text-lg"
+                  >
                     View Fight Card
                   </Button>
                 </Link>
@@ -156,7 +170,7 @@ export default function EventsPage() {
                 <div className="group relative bg-white border border-slate-200 hover:border-primary/50 transition-all overflow-hidden cursor-pointer">
                   {/* Left accent bar */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-slate-200 group-hover:bg-primary transition-colors" />
-                  
+
                   <div className="flex flex-col md:flex-row md:items-center justify-between p-6 md:p-8 pl-8 md:pl-10">
                     {/* Event Number & Date */}
                     <div className="flex items-center gap-6 md:gap-10 mb-4 md:mb-0">
@@ -165,9 +179,9 @@ export default function EventsPage() {
                           CZ{event.id}
                         </div>
                       </div>
-                      
+
                       <div className="hidden md:block w-px h-12 bg-slate-200" />
-                      
+
                       <div>
                         <div className="font-bold text-slate-900">{event.date}</div>
                         <div className="text-sm text-slate-500">{event.day}</div>
@@ -183,10 +197,13 @@ export default function EventsPage() {
                           <div className="text-sm text-slate-500">{event.location}</div>
                         </div>
                       </div>
-                      
+
                       <div className="hidden md:flex items-center gap-2 text-slate-400 group-hover:text-primary transition-colors">
                         <span className="text-sm font-bold uppercase tracking-wider">Details</span>
-                        <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight
+                          size={18}
+                          className="group-hover:translate-x-1 transition-transform"
+                        />
                       </div>
                     </div>
                   </div>
@@ -222,9 +239,16 @@ export default function EventsPage() {
               </div>
             </div>
             <Link href="/past-events">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold uppercase tracking-wider h-14 px-8 whitespace-nowrap group">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold uppercase tracking-wider h-14 px-8 whitespace-nowrap group"
+              >
                 View Past Events
-                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                <ChevronRight
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  size={20}
+                />
               </Button>
             </Link>
           </div>

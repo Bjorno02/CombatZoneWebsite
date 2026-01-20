@@ -1,9 +1,63 @@
-node_modules
-dist
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+server/public/
+
+# OS files
 .DS_Store
-server/public
-vite.config.ts.*
-*.tar.gz
+Thumbs.db
+*.swp
+*~
+
+# Environment variables - NEVER COMMIT THESE
 .env
+.env.*
 .env.local
 .env.*.local
+!.env.example
+
+# IDE/Editor
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets & credentials - NEVER COMMIT THESE
+*.pem
+*.key
+*.cert
+*.p12
+credentials.json
+secrets.json
+service-account*.json
+**/secrets/
+**/credentials/
+
+# Temp & cache files
+*.tar.gz
+*.zip
+.cache/
+.temp/
+.tmp/
+vite.config.ts.*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
