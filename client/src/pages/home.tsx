@@ -8,82 +8,126 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { PPVSection } from "@/components/home/PPVSection";
 import { WhatIsCombatZoneSection } from "@/components/home/WhatIsCombatZoneSection";
 import { Button } from "@/components/ui/button";
-import { Trophy, Star, Users, History } from "lucide-react";
+import { Star } from "lucide-react";
 import { Link } from "wouter";
 import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
+import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
 
 export default function Home() {
   useSEO(SEO_CONFIG.home);
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white font-sans">
+      {/* Structured Data for SEO */}
+      <OrganizationSchema />
+      <WebsiteSchema />
+
       <Navbar />
 
       <main>
-        {/* 1. HERO: Carousel with interactive slides - Maximum visual impact */}
+        {/* Hero */}
         <Hero />
 
-        {/* 2. CREDIBILITY STRIP: Quick stats/trust signals - Builds immediate credibility */}
-        <section className="bg-primary py-10 md:py-12 text-white relative z-20 overflow-hidden">
-          {/* Flowing transition from hero */}
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/20 to-transparent"></div>
-          {/* Flowing transition to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/10 via-white/5 to-transparent"></div>
+        {/* Stats Banner */}
+        <section className="relative z-20 overflow-hidden">
+          {/* Animated gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-red-700 via-primary to-red-700 bg-[length:200%_100%] animate-[shimmer_3s_ease-in-out_infinite]" />
 
-          <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
-              <div className="flex flex-col items-center">
-                <History className="mb-2 w-8 h-8 opacity-80" />
-                <span className="text-3xl font-bold font-[Chakra_Petch]">24+</span>
-                <span className="text-xs uppercase tracking-widest font-bold opacity-80">
-                  Years Running
+          {/* Diagonal stripes overlay */}
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.3) 10px, rgba(0,0,0,0.3) 20px)",
+            }}
+          />
+
+          {/* Glow effects */}
+          <div className="absolute top-0 left-1/4 w-64 h-full bg-white/10 blur-3xl" />
+          <div className="absolute top-0 right-1/4 w-64 h-full bg-white/10 blur-3xl" />
+
+          {/* Top edge highlight */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+
+          {/* Bottom edge shadow */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/30" />
+
+          <div className="relative max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 py-8 md:py-10">
+            <div className="flex flex-wrap justify-center md:justify-between items-center gap-8 md:gap-4">
+              {/* Stat items with glow */}
+              <div className="flex items-center gap-4 px-6 group">
+                <span className="text-4xl md:text-5xl font-black font-[Chakra_Petch] drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all">
+                  24+
+                </span>
+                <span className="text-sm uppercase tracking-wider font-bold opacity-90 leading-tight">
+                  Years
+                  <br />
+                  Running
                 </span>
               </div>
-              <div className="flex flex-col items-center">
-                <Users className="mb-2 w-8 h-8 opacity-80" />
-                <span className="text-3xl font-bold font-[Chakra_Petch]">90+</span>
-                <span className="text-xs uppercase tracking-widest font-bold opacity-80">
-                  Events Hosted
+
+              <div className="hidden md:flex items-center">
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+              </div>
+
+              <div className="flex items-center gap-4 px-6 group">
+                <span className="text-4xl md:text-5xl font-black font-[Chakra_Petch] drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all">
+                  90+
+                </span>
+                <span className="text-sm uppercase tracking-wider font-bold opacity-90 leading-tight">
+                  Events
+                  <br />
+                  Hosted
                 </span>
               </div>
-              <div className="flex flex-col items-center">
-                <Star className="mb-2 w-8 h-8 opacity-80" />
-                <span className="text-3xl font-bold font-[Chakra_Petch]">UFC</span>
-                <span className="text-xs uppercase tracking-widest font-bold opacity-80">
-                  Veteran Owned
+
+              <div className="hidden md:flex items-center">
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+              </div>
+
+              <div className="flex items-center gap-4 px-6 group">
+                <span className="text-4xl md:text-5xl font-black font-[Chakra_Petch] drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all">
+                  UFC
+                </span>
+                <span className="text-sm uppercase tracking-wider font-bold opacity-90 leading-tight">
+                  Veteran
+                  <br />
+                  Owned
                 </span>
               </div>
-              <div className="flex flex-col items-center">
-                <Trophy className="mb-2 w-8 h-8 opacity-80" />
-                <span className="text-3xl font-bold font-[Chakra_Petch]">#1</span>
-                <span className="text-xs uppercase tracking-widest font-bold opacity-80">
-                  Regional Promotion
+
+              <div className="hidden md:flex items-center">
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+              </div>
+
+              <div className="flex items-center gap-4 px-6 group">
+                <span className="text-4xl md:text-5xl font-black font-[Chakra_Petch] drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all">
+                  #1
+                </span>
+                <span className="text-sm uppercase tracking-wider font-bold opacity-90 leading-tight">
+                  Regional
+                  <br />
+                  Promotion
                 </span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 3. EVENTS: Upcoming & Featured - Primary CTA (tickets), most important content */}
         <EventSection />
 
-        {/* 4. PPV: Pay-Per-View section */}
         <PPVSection />
 
-        {/* 5. WHAT IS COMBAT ZONE: About section */}
         <WhatIsCombatZoneSection />
 
-        {/* 6. CHAMPIONS: Title defenders from last event - Social proof, excitement */}
         <ChampionsSection />
 
-        {/* 7. ABOUT: Mission & Story - Builds deeper brand connection */}
         <AboutSection />
 
-        {/* 8. STORE: Merch - Secondary action, commerce opportunity */}
         <MerchSection />
 
-        {/* 9. SPONSOR CTA: Business opportunity - Flows from merch section */}
+        {/* Sponsor CTA */}
         <section className="py-20 md:py-28 bg-zinc-900 text-center relative overflow-hidden">
-          {/* Star separator at TOP - closer together */}
+          {/* Star separator */}
           <div className="absolute top-0 left-0 right-0 h-6 flex items-center justify-center z-[1]">
             <div className="flex items-center gap-4 w-full max-w-4xl px-8">
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
@@ -117,11 +161,11 @@ export default function Home() {
               <br />
               With <span className="text-primary">Greatness</span>
             </h2>
-            <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-neutral-400 text-lg mb-10 max-w-2xl mx-auto">
               Connect with a passionate, loyal audience that can only be found at Combat Zone.
             </p>
             <Link href="/sponsors">
-              <Button className="bg-white text-slate-900 hover:bg-slate-200 font-bold uppercase px-8 py-6 text-lg">
+              <Button className="bg-white text-neutral-900 hover:bg-neutral-200 font-bold uppercase px-8 py-6 text-lg">
                 Become a Sponsor
               </Button>
             </Link>

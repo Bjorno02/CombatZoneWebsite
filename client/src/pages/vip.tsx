@@ -1,10 +1,15 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { PageHero } from "@/components/layout/PageHero";
+import { SectionHero } from "@/components/layout/SectionHero";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { TICKETMASTER_EVENT_URL } from "@/lib/constants";
-import { Star, Crown, Users, Camera, UtensilsCrossed, Ticket, CheckCircle2, MapPin, HelpCircle } from "lucide-react";
+import { Star, Crown, Ticket, MapPin, HelpCircle, Sparkles } from "lucide-react";
 import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
 import vip1Img from "@assets/IMAGES/VIP1.jpg";
 import vip2Img from "@assets/IMAGES/VIP2.jpg";
@@ -16,13 +21,13 @@ import vip6Img from "@assets/IMAGES/VIP6.jpg";
 const VIP_PACKAGES = {
   risingStar: {
     name: "Rising Star Package",
-    price: 120.00,
+    price: 120.0,
     section: "Upper Level Bowl Seating",
     icon: Star,
   },
   elite: {
     name: "Elite Level Package",
-    price: 125.00,
+    price: 125.0,
     section: "Lower Level Bowl Seating",
     icon: Crown,
   },
@@ -30,20 +35,13 @@ const VIP_PACKAGES = {
 
 const SHARED_FEATURES = [
   "Official CZ event ticket",
-  "In Venue Hospitality with UFC athlete appearances",
+  "In-Venue Hospitality with UFC athlete appearances",
   "Cash Bar & Food Buffet sponsored by Alltown Fresh",
   "14 x 10 event poster signed by fighters on the card",
   "Dedicated VIP Entrance to SNHU Arena",
 ];
 
-const VIP_IMAGES = [
-  vip1Img,
-  vip2Img,
-  vip3Img,
-  vip4Img,
-  vip5Img,
-  vip6Img,
-];
+const VIP_IMAGES = [vip1Img, vip2Img, vip3Img, vip4Img, vip5Img, vip6Img];
 
 const FAQS = [
   {
@@ -52,27 +50,33 @@ const FAQS = [
   },
   {
     question: "Do the packages have a minimum age requirement?",
-    answer: "There is typically no age requirement to attend the event and our hospitality. However, you will need an ID to check in at the event.",
+    answer:
+      "There is typically no age requirement to attend the event and our hospitality. However, you will need an ID to check in at the event.",
   },
   {
     question: "Can I choose my seat?",
-    answer: "You can request a certain section and row if available on the seating chart. However, the exact seat number is not confirmed until tickets are in your possession.",
+    answer:
+      "You can request a certain section and row if available on the seating chart. However, the exact seat number is not confirmed until tickets are in your possession.",
   },
   {
     question: "How & when will I receive my tickets?",
-    answer: "Tickets will be available for pick up at the VIP table along with your credentials the night of the event. An informational email will also be sent explaining details 24 hours prior to event as well.",
+    answer:
+      "Tickets will be available for pick up at the VIP table along with your credentials the night of the event. An informational email will also be sent explaining details 24 hours prior to event as well.",
   },
   {
     question: "Can I purchase the VIP upgrade if I've already purchased a ticket to the event?",
-    answer: "Yes, if you already have an event ticket purchased and would like to upgrade to a VIP package please email jmsnkattar@czmma.com and someone will be happy to assist you.",
+    answer:
+      "Yes, if you already have an event ticket purchased and would like to upgrade to a VIP package please email jmsnkattar@czmma.com and someone will be happy to assist you.",
   },
   {
     question: "What time does hospitality open and how long does it last?",
-    answer: "Hospitality starts when doors open for the event. The food usually lasts till about the start of the main card. Typically for about 3 or so hours. A private cash bar is available throughout the entirety of the event.",
+    answer:
+      "Hospitality starts when doors open for the event. The food usually lasts till about the start of the main card. Typically for about 3 or so hours. A private cash bar is available throughout the entirety of the event.",
   },
   {
     question: "Is VIP parking included?",
-    answer: "Parking is not included in these packages however, there is parking available around the venue. Please refer to the venue's website for more information regarding parking here.",
+    answer:
+      "Parking is not included in these packages however, there is parking available around the venue. Please refer to the venue's website for more information regarding parking here.",
   },
   {
     question: "What if I change my mind and don't want my package?",
@@ -82,155 +86,198 @@ const FAQS = [
 
 export default function VIPPage() {
   useSEO(SEO_CONFIG.vip);
-  
+
   return (
     <PageLayout>
-      <PageHero 
-        title={
-          <>
-            VIP <span className="text-primary">Experience</span>
-          </>
-        }
-        subtitle="Premium Experience"
-        description="Secure the ultimate VIP access to our live events. From access to the all-inclusive VIP lounge to exclusive photo opportunities with UFC athletes, every detail is designed to place you closer to the action."
-        alignment="center"
-        minHeight="tall"
-        titleMaxWidth="wide"
+      <SectionHero
+        label="Premium Access"
+        title="VIP EXPERIENCE"
+        highlightWord="EXPERIENCE"
+        description="Secure the ultimate VIP access to our live events. From the all-inclusive hospitality lounge to exclusive photo opportunities with UFC athletes."
       />
 
-      {/* Info Strip */}
-      <section className="py-6 bg-primary text-white">
-        <Container>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-            <div className="flex items-center gap-3">
-              <Ticket className="text-white" size={20} />
-              <div>
-                <div className="font-bold">VIP Packages Available</div>
-                <div className="text-sm text-white/90">Rising Star & Elite Level packages</div>
+      {/* VIP Packages Section */}
+      <section className="py-16 md:py-24 bg-neutral-50 relative overflow-hidden">
+        {/* Subtle background elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-bl from-primary/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/3 bg-gradient-to-tr from-neutral-200/50 to-transparent" />
+
+        <Container className="relative z-10">
+          {/* Section Header */}
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="h-px flex-1 max-w-24 bg-neutral-300" />
+            <div className="bg-primary text-white px-4 py-2 font-bold font-[Chakra_Petch] uppercase tracking-wider text-sm">
+              VIP Packages
+            </div>
+            <div className="h-px flex-1 max-w-24 bg-neutral-300" />
+          </div>
+
+          {/* Limited Availability Badge - Premium Style */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex items-center gap-3 bg-neutral-900 px-6 py-3 border border-neutral-700">
+              <Sparkles className="text-primary" size={18} />
+              <span className="text-white font-bold uppercase tracking-[0.15em] text-sm">
+                Limited Availability
+              </span>
+              <Sparkles className="text-primary" size={18} />
+            </div>
+          </div>
+
+          {/* Packages Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+            {/* Rising Star Package */}
+            <div className="bg-white border border-neutral-200 shadow-xl overflow-hidden group hover:border-primary/30 transition-all">
+              {/* Top Accent */}
+              <div className="h-1 bg-neutral-200 group-hover:bg-primary transition-colors" />
+
+              <div className="p-8 md:p-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-neutral-100 flex items-center justify-center border border-neutral-200">
+                    <Star className="text-primary" size={28} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold font-[Chakra_Petch] uppercase text-neutral-900">
+                      Rising Star
+                    </h3>
+                    <span className="text-sm text-neutral-500 uppercase tracking-wider">
+                      Package
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <span className="text-sm text-neutral-500 uppercase tracking-wider">Price</span>
+                  <div className="text-5xl font-bold text-neutral-900 font-[Chakra_Petch]">
+                    ${VIP_PACKAGES.risingStar.price.toFixed(2)}
+                  </div>
+                </div>
+
+                <div className="bg-neutral-50 border border-neutral-200 p-4 mb-8">
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin className="text-primary" size={16} />
+                    <span className="text-xs font-bold text-neutral-500 uppercase tracking-wider">
+                      Seating
+                    </span>
+                  </div>
+                  <div className="font-bold text-neutral-900">
+                    {VIP_PACKAGES.risingStar.section}
+                  </div>
+                </div>
+
+                <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className="w-full bg-primary text-white hover:bg-primary/90 font-bold uppercase h-14 text-base tracking-wider"
+                  >
+                    <Ticket className="mr-2" size={18} />
+                    Purchase Package
+                  </Button>
+                </a>
               </div>
             </div>
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/30">
-              <span className="text-sm font-bold uppercase tracking-wider">⚠️ Limited Availability</span>
+
+            {/* Elite Level Package */}
+            <div className="bg-neutral-900 border border-neutral-700 shadow-xl overflow-hidden group hover:border-primary transition-all relative">
+              {/* Top Accent */}
+              <div className="h-1 bg-primary" />
+
+              {/* Premium Badge */}
+              <div className="absolute top-6 right-6">
+                <div className="bg-primary text-white text-xs font-bold uppercase tracking-wider px-3 py-1">
+                  Premium
+                </div>
+              </div>
+
+              <div className="p-8 md:p-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center border border-white/20">
+                    <Crown className="text-primary" size={28} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold font-[Chakra_Petch] uppercase text-white">
+                      Elite Level
+                    </h3>
+                    <span className="text-sm text-neutral-400 uppercase tracking-wider">
+                      Package
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <span className="text-sm text-neutral-400 uppercase tracking-wider">Price</span>
+                  <div className="text-5xl font-bold text-white font-[Chakra_Petch]">
+                    ${VIP_PACKAGES.elite.price.toFixed(2)}
+                  </div>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 p-4 mb-8">
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin className="text-primary" size={16} />
+                    <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                      Seating
+                    </span>
+                  </div>
+                  <div className="font-bold text-white">{VIP_PACKAGES.elite.section}</div>
+                </div>
+
+                <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-2 border-white text-white hover:bg-white hover:text-neutral-900 font-bold uppercase h-14 text-base tracking-wider"
+                  >
+                    <Ticket className="mr-2" size={18} />
+                    Purchase Package
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* VIP Packages Comparison */}
+      {/* Shared Features Section - Clean Design */}
       <section className="py-16 md:py-24 bg-white">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-[Chakra_Petch] uppercase mb-4">
-              VIP Packages
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto mb-4">
-              Choose your experience.
-            </p>
-            <div className="inline-flex items-center gap-2 bg-primary/10 border-2 border-primary/30 px-6 py-2 rounded-lg">
-              <span className="text-primary font-bold uppercase tracking-wider text-sm">⚠️ Limited Availability</span>
+          {/* Section Header */}
+          <div className="flex items-center gap-4 mb-12">
+            <div className="bg-neutral-900 text-white px-4 py-2 font-bold font-[Chakra_Petch] uppercase tracking-wider text-sm">
+              Package Inclusions
             </div>
-          </div>
-          
-          {/* Packages Side by Side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Rising Star Package */}
-            <div>
-              {/* Package Card */}
-              <div className="bg-white border-2 border-slate-200 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-primary/30 transition-all duration-300">
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border-2 border-primary/20">
-                      <Star className="text-primary" size={28} />
-                    </div>
-                    <h3 className="text-3xl md:text-4xl font-bold font-[Chakra_Petch] uppercase text-slate-900">
-                      Rising Star
-                    </h3>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Price</div>
-                    <div className="text-4xl md:text-5xl font-bold text-primary">
-                      ${VIP_PACKAGES.risingStar.price.toFixed(2)}
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-6">
-                    <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="text-primary" size={18} />
-                      <span className="text-sm font-semibold text-slate-600 uppercase tracking-wider">Seating</span>
-                    </div>
-                    <div className="font-bold text-slate-900">{VIP_PACKAGES.risingStar.section}</div>
-                  </div>
-
-                  <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
-                    <Button 
-                      size="lg" 
-                      className="w-full bg-primary text-white hover:bg-primary/90 font-bold uppercase h-14 text-lg shadow-lg shadow-primary/20"
-                    >
-                      <span className="flex items-center justify-center gap-2">
-                        <Ticket className="w-5 h-5" /> Buy Now
-                      </span>
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Elite Level Package */}
-            <div>
-              {/* Package Card */}
-              <div className="bg-gradient-to-br from-black via-slate-900 to-black border-2 border-primary rounded-xl overflow-hidden shadow-lg shadow-primary/20 hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300">
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center border-2 border-primary/30">
-                      <Crown className="text-primary" size={28} />
-                    </div>
-                    <h3 className="text-3xl md:text-4xl font-bold font-[Chakra_Petch] uppercase text-white">
-                      Elite Level
-                    </h3>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Price</div>
-                    <div className="text-4xl md:text-5xl font-bold text-primary">
-                      ${VIP_PACKAGES.elite.price.toFixed(2)}
-                    </div>
-                  </div>
-
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 mb-6">
-                    <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="text-primary" size={18} />
-                      <span className="text-sm font-semibold text-slate-300 uppercase tracking-wider">Seating</span>
-                    </div>
-                    <div className="font-bold text-white">{VIP_PACKAGES.elite.section}</div>
-                  </div>
-
-                  <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
-                    <Button 
-                      size="lg" 
-                      variant="outline"
-                      className="w-full border-2 border-white text-white hover:bg-white hover:text-black font-bold uppercase h-14 text-lg shadow-lg"
-                    >
-                      <span className="flex items-center justify-center gap-2">
-                        <Ticket className="w-5 h-5" /> Buy Now
-                      </span>
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <div className="h-px flex-1 bg-neutral-200" />
           </div>
 
-          {/* Shared Features Section */}
-          <div className="bg-slate-50 border-2 border-slate-200 rounded-lg p-8 md:p-10">
-            <h4 className="text-xl md:text-2xl font-bold font-[Chakra_Petch] uppercase mb-6 text-center">
-              Both Packages Include
-            </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-[Chakra_Petch] uppercase mb-4 text-neutral-900">
+                Both Packages <span className="text-primary">Include</span>
+              </h2>
+              <p className="text-neutral-500 max-w-xl mx-auto">
+                Premium amenities included with every VIP package
+              </p>
+            </div>
+
+            {/* Clean List Style */}
+            <div className="border border-neutral-200 bg-white">
               {SHARED_FEATURES.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="text-primary mt-0.5 shrink-0" size={20} />
-                  <span className="text-slate-700 text-sm md:text-base">{feature}</span>
+                <div
+                  key={index}
+                  className={`relative flex items-center gap-5 p-6 ${
+                    index !== SHARED_FEATURES.length - 1 ? "border-b border-neutral-200" : ""
+                  } group hover:bg-neutral-50 transition-colors`}
+                >
+                  {/* Left accent */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-neutral-200 group-hover:bg-primary transition-colors" />
+
+                  {/* Number */}
+                  <div className="w-8 h-8 bg-neutral-900 flex items-center justify-center shrink-0">
+                    <span className="text-white text-sm font-bold">{index + 1}</span>
+                  </div>
+
+                  {/* Text */}
+                  <span className="text-neutral-900 font-medium text-base md:text-lg">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
@@ -238,28 +285,42 @@ export default function VIPPage() {
         </Container>
       </section>
 
-      {/* What VIP Feels Like - Images with Breakdown */}
-      <section className="py-20 md:py-28 bg-slate-50">
-        <Container>
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold tracking-[0.2em] text-sm uppercase mb-4 block">Experience</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-[Chakra_Petch] uppercase mb-4">
+      {/* What VIP Feels Like - Images */}
+      <section className="py-16 md:py-24 bg-neutral-900 relative overflow-hidden">
+        {/* Background accents */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+        <Container className="relative z-10">
+          {/* Section Header */}
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="h-px flex-1 max-w-24 bg-neutral-700" />
+            <div className="bg-primary text-white px-4 py-2 font-bold font-[Chakra_Petch] uppercase tracking-wider text-sm">
+              The Experience
+            </div>
+            <div className="h-px flex-1 max-w-24 bg-neutral-700" />
+          </div>
+
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold font-[Chakra_Petch] uppercase text-white mb-4">
               What VIP <span className="text-primary">Feels Like</span>
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto"></div>
+            <p className="text-neutral-400 max-w-xl mx-auto">
+              Exclusive access, premium hospitality, and memories that last a lifetime
+            </p>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {VIP_IMAGES.map((image, index) => (
               <div key={index} className="group">
-                <div className="aspect-square rounded-xl overflow-hidden relative shadow-md hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-primary/30">
-                  <img 
-                    src={image} 
-                    alt={`VIP Experience ${index + 1}`} 
+                <div className="aspect-square overflow-hidden relative border border-neutral-700 hover:border-primary/50 transition-all">
+                  <img
+                    src={image}
+                    alt={`VIP Experience ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
             ))}
@@ -268,27 +329,33 @@ export default function VIPPage() {
       </section>
 
       {/* VIP FAQs */}
-      <section className="py-16 md:py-24 bg-primary">
+      <section className="py-16 md:py-24 bg-white">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <HelpCircle className="text-white" size={32} />
-              <h2 className="text-3xl md:text-4xl font-bold font-[Chakra_Petch] uppercase text-white">
-                VIP FAQs
-              </h2>
+            {/* Section Header */}
+            <div className="flex items-center gap-4 mb-12">
+              <div className="bg-neutral-900 text-white px-4 py-2 font-bold font-[Chakra_Petch] uppercase tracking-wider text-sm flex items-center gap-2">
+                <HelpCircle size={16} />
+                FAQs
+              </div>
+              <div className="h-px flex-1 bg-neutral-200" />
             </div>
-            
-            <Accordion type="single" collapsible className="w-full space-y-4">
+
+            <h2 className="text-3xl md:text-4xl font-bold font-[Chakra_Petch] uppercase mb-8 text-neutral-900">
+              Frequently Asked <span className="text-primary">Questions</span>
+            </h2>
+
+            <Accordion type="single" collapsible className="w-full space-y-3">
               {FAQS.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
-                  className="bg-white border-2 border-white/30 rounded-lg px-6 py-2 shadow-lg"
+                  className="bg-neutral-50 border border-neutral-200 px-6 data-[state=open]:border-neutral-300"
                 >
-                  <AccordionTrigger className="text-left font-bold font-[Chakra_Petch] uppercase text-slate-900 hover:text-primary">
+                  <AccordionTrigger className="text-left font-bold text-neutral-900 hover:text-primary hover:no-underline py-5 [&>svg]:text-neutral-400">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-slate-700 leading-relaxed pt-2 pb-4">
+                  <AccordionContent className="text-neutral-600 leading-relaxed pb-5">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

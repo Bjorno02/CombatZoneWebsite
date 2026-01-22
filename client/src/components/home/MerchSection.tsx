@@ -18,7 +18,7 @@ export function MerchSection() {
 
       {/* Clean divider line at TOP */}
       <div className="absolute top-0 left-0 right-0 h-px bg-white/20"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-primary"></div>
+      <div className="absolute top-0 left-1/2 -tranneutral-x-1/2 w-24 h-1 bg-primary"></div>
 
       <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
         {/* Header */}
@@ -32,7 +32,7 @@ export function MerchSection() {
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-[Chakra_Petch] text-white uppercase leading-[0.9] mb-6">
             Wear the <span className="text-primary">Battle</span>
           </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
             Rep the promotion that built New England's top fighters. Premium apparel that hits as
             hard as our athletes.
           </p>
@@ -71,25 +71,25 @@ export function MerchSection() {
               <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
                 <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">01</div>
                 <div className="font-bold uppercase tracking-wider mb-1">Hoodies</div>
-                <div className="text-sm text-slate-500">Premium heavyweight</div>
+                <div className="text-sm text-neutral-500">Premium heavyweight</div>
               </div>
 
               <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
                 <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">02</div>
                 <div className="font-bold uppercase tracking-wider mb-1">T-Shirts</div>
-                <div className="text-sm text-slate-500">Event & signature tees</div>
+                <div className="text-sm text-neutral-500">Event & signature tees</div>
               </div>
 
               <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
                 <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">03</div>
                 <div className="font-bold uppercase tracking-wider mb-1">Fight Kits</div>
-                <div className="text-sm text-slate-500">Official training gear</div>
+                <div className="text-sm text-neutral-500">Official training gear</div>
               </div>
 
               <div className="bg-white/[0.03] border border-white/10 p-6 hover:border-primary/50 hover:bg-white/[0.06] transition-all cursor-pointer group">
                 <div className="text-3xl font-bold font-[Chakra_Petch] text-primary mb-1">04</div>
                 <div className="font-bold uppercase tracking-wider mb-1">Accessories</div>
-                <div className="text-sm text-slate-500">Hats, bags & more</div>
+                <div className="text-sm text-neutral-500">Hats, bags & more</div>
               </div>
             </div>
 
@@ -102,7 +102,7 @@ export function MerchSection() {
                 <ShoppingBag className="mr-3" size={22} />
                 Shop the Collection
                 <ArrowRight
-                  className="ml-3 group-hover:translate-x-1 transition-transform"
+                  className="ml-3 group-hover:tranneutral-x-1 transition-transform"
                   size={22}
                 />
               </Button>
@@ -111,17 +111,19 @@ export function MerchSection() {
             {/* Trust badges */}
             <div className="flex items-center justify-center gap-8 mt-8 pt-8 border-t border-white/10">
               <div className="text-center">
-                <div className="text-sm text-slate-600 uppercase tracking-wider">Free Shipping</div>
+                <div className="text-sm text-neutral-600 uppercase tracking-wider">
+                  Free Shipping
+                </div>
                 <div className="text-white font-bold">Orders $75+</div>
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div className="text-center">
-                <div className="text-sm text-slate-600 uppercase tracking-wider">Quality</div>
+                <div className="text-sm text-neutral-600 uppercase tracking-wider">Quality</div>
                 <div className="text-white font-bold">Premium Materials</div>
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div className="text-center">
-                <div className="text-sm text-slate-600 uppercase tracking-wider">Support</div>
+                <div className="text-sm text-neutral-600 uppercase tracking-wider">Support</div>
                 <div className="text-white font-bold">Fighter-Owned</div>
               </div>
             </div>

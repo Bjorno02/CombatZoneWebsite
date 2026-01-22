@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { TICKETMASTER_EVENT_URL } from "@/lib/constants";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "wouter";
 
 // Import Combat Zone MMA images
 import slide1 from "@assets/IMAGES/CombatZoneHero1.png";
@@ -15,20 +16,28 @@ const SLIDES = [
   {
     id: 1,
     image: slide1,
-    title: "COMBAT ZONE 91",
+    title: "COMBAT ZONE",
     subtitle: "NEW ENGLAND'S LONGEST RUNNING MMA PROMOTION",
     cta: "GET TICKETS",
+    ctaLink: TICKETMASTER_EVENT_URL,
+    ctaExternal: true,
     secondaryCta: "FIGHT CARD",
-    align: "center", // Text alignment
+    secondaryCtaLink: "/fight-card",
+    align: "left",
+    isMain: true, // main event hero - slightly fancier
   },
   {
     id: 2,
     image: slide2,
     title: "CHAMPIONS RISING",
     subtitle: "WHERE LEGENDS ARE MADE",
-    cta: "VIEW FIGHTERS",
-    secondaryCta: "SEE CHAMPIONS",
+    cta: "VIEW CHAMPIONS",
+    ctaLink: "/champions",
+    ctaExternal: false,
+    secondaryCta: null,
+    secondaryCtaLink: null,
     align: "left",
+    isMain: false,
   },
   {
     id: 3,
@@ -36,8 +45,12 @@ const SLIDES = [
     title: "OFFICIAL MERCH",
     subtitle: "WEAR THE BATTLE",
     cta: "SHOP NOW",
+    ctaLink: "/shop",
+    ctaExternal: false,
     secondaryCta: null,
-    align: "center",
+    secondaryCtaLink: null,
+    align: "left",
+    isMain: false,
   },
 ];
 
@@ -63,9 +76,9 @@ export function Hero() {
 
   return (
     <section className="relative h-screen min-h-[600px] bg-black overflow-hidden group">
-      {/* Flowing transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary/30 via-primary/15 to-transparent z-10"></div>
-      
+      {/* Bottom divider line */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-black z-10"></div>
+
       {/* Carousel Viewport */}
       <div className="absolute inset-0 z-0" ref={emblaRef}>
         <div className="flex h-full">
@@ -78,49 +91,94 @@ export function Hero() {
                 className="w-full h-full object-cover"
                 loading="eager"
               />
-              
+
               {/* Overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
 
               {/* Content Container */}
-              <div className={cn(
-                  "absolute inset-0 max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 flex flex-col justify-center h-full z-10",
-                  slide.align === "center" && "items-center text-center",
-                  slide.align === "left" && "items-start text-left",
-                  slide.align === "right" && "items-end text-right"
-              )}>
-                <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 fill-mode-both" style={{ animationDelay: '200ms' }}>
-                    <span className="inline-block py-1 px-3 bg-primary text-white text-sm font-bold tracking-widest uppercase mb-2 skew-x-[-10deg]">
-                        <span className="skew-x-[10deg]">{slide.subtitle}</span>
-                    </span>
-                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white font-[Chakra_Petch] leading-[0.9] italic drop-shadow-lg uppercase px-4">
+              <div className="absolute inset-0 max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 flex flex-col justify-center items-start text-left h-full z-10">
+                <div
+                  className="animate-in fade-in slide-in-from-left-10 duration-1000 fill-mode-both"
+                  style={{ animationDelay: "200ms" }}
+                >
+                  {/* Vertical accent line + content wrapper */}
+                  <div className="flex gap-6 md:gap-8 items-start">
+                    {/* Accent line - taller for main hero */}
+                    <div
+                      className={cn(
+                        "hidden sm:block w-1 bg-primary",
+                        slide.isMain ? "h-40 md:h-52" : "h-32 md:h-40"
+                      )}
+                    />
+
+                    <div>
+                      {/* Subtitle - outline style for all */}
+                      <div className="mb-6 md:mb-8">
+                        <span
+                          className={cn(
+                            "inline-block py-2 px-5 border-2 border-white/50 text-white text-xs md:text-sm font-bold tracking-[0.2em] uppercase backdrop-blur-sm",
+                            slide.isMain && "border-white/70"
+                          )}
+                        >
+                          {slide.subtitle}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h1
+                        className={cn(
+                          "font-bold text-white font-[Chakra_Petch] leading-[0.9] uppercase mb-8 md:mb-10",
+                          slide.isMain
+                            ? "text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+                            : "text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
+                        )}
+                      >
                         {slide.title}
-                    </h1>
-                    
-                    <div className={cn(
-                        "flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 w-full sm:w-auto",
-                        slide.align === "center" && "items-center justify-center",
-                        slide.align === "left" && "items-start justify-start",
-                        slide.align === "right" && "items-end justify-end"
-                    )}>
-                        {slide.cta === "GET TICKETS" ? (
-                          <a href={TICKETMASTER_EVENT_URL} target="_blank" rel="noopener noreferrer">
-                            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-7 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider skew-x-[-10deg] w-full sm:w-auto sm:min-w-[200px] md:min-w-[220px] rounded-none shadow-[0_0_20px_rgba(220,20,60,0.3)] transition-transform hover:scale-105">
-                              <span className="skew-x-[10deg]">{slide.cta}</span>
+                      </h1>
+
+                      {/* CTA Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
+                        {slide.ctaExternal ? (
+                          <a href={slide.ctaLink} target="_blank" rel="noopener noreferrer">
+                            <Button
+                              size="lg"
+                              className={cn(
+                                "text-white font-bold uppercase tracking-wider rounded-none transition-all hover:scale-105",
+                                slide.isMain
+                                  ? "bg-primary hover:bg-white hover:text-primary border-2 border-primary hover:border-white px-10 sm:px-12 py-7 sm:py-8 text-lg sm:text-xl min-w-[220px]"
+                                  : "bg-transparent border-2 border-primary hover:bg-primary px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg min-w-[200px]"
+                              )}
+                            >
+                              {slide.cta}
+                              {slide.isMain && <ChevronRight className="ml-2" />}
                             </Button>
                           </a>
                         ) : (
-                          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-7 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider skew-x-[-10deg] w-full sm:w-auto sm:min-w-[200px] md:min-w-[220px] rounded-none shadow-[0_0_20px_rgba(220,20,60,0.3)] transition-transform hover:scale-105">
-                            <span className="skew-x-[10deg]">{slide.cta}</span>
-                          </Button>
-                        )}
-                        {slide.secondaryCta && (
-                            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black px-6 sm:px-8 py-5 sm:py-7 text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider skew-x-[-10deg] w-full sm:w-auto sm:min-w-[200px] md:min-w-[220px] rounded-none backdrop-blur-sm transition-transform hover:scale-105">
-                                <span className="skew-x-[10deg]">{slide.secondaryCta}</span>
+                          <Link href={slide.ctaLink}>
+                            <Button
+                              size="lg"
+                              className="bg-transparent border-2 border-primary text-white hover:bg-primary px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-bold uppercase tracking-wider min-w-[200px] rounded-none transition-all hover:scale-105"
+                            >
+                              {slide.cta}
+                              <ChevronRight className="ml-2" />
                             </Button>
+                          </Link>
                         )}
+                        {slide.secondaryCta && slide.secondaryCtaLink && (
+                          <Link href={slide.secondaryCtaLink}>
+                            <Button
+                              size="lg"
+                              variant="outline"
+                              className="border-2 border-white/60 text-white hover:bg-white hover:text-black px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-bold uppercase tracking-wider min-w-[200px] rounded-none backdrop-blur-sm transition-all hover:scale-105"
+                            >
+                              {slide.secondaryCta}
+                            </Button>
+                          </Link>
+                        )}
+                      </div>
                     </div>
+                  </div>
                 </div>
               </div>
             </div>

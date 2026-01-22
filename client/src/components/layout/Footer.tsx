@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
@@ -6,83 +6,74 @@ export function Footer() {
   return (
     <footer className="bg-black border-t border-white/10 pt-24 pb-12 text-white">
       <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16">
-        {/* Top Section: CTA & Newsletter - Red/Black Diagonal Stripe Design */}
-        <div className="relative rounded-lg overflow-hidden mb-12 md:mb-16">
-          {/* Diagonal stripe background - Red with black stripes */}
-          <div className="absolute inset-0 bg-primary" />
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 18px,
-                #000000 18px,
-                #000000 26px,
-                transparent 26px,
-                transparent 44px
-              )`,
-            }}
-          />
-          {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-black/30" />
+        {/* Top Section: CTA & Social */}
+        <div className="relative overflow-hidden mb-12 md:mb-16">
+          {/* Clean gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900" />
+          {/* Subtle accent */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
 
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 p-8 md:p-12">
-            <div className="max-w-xl">
-              <h3 className="text-2xl sm:text-3xl font-bold font-[Chakra_Petch] uppercase italic mb-4">
-                Join the Fight Club
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 p-8 md:p-12">
+            {/* Left - CTA */}
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl sm:text-3xl font-bold font-[Chakra_Petch] uppercase mb-3">
+                Join the <span className="text-primary">Fight Club</span>
               </h3>
-              <p className="text-slate-300 mb-8 leading-relaxed">
-                Get exclusive pre-sale access, fighter news, and sponsor offers delivered to your
-                inbox.
+              <p className="text-neutral-400 mb-6 max-w-md">
+                Have questions or want to get involved? Reach out to our team.
               </p>
-              <div className="flex flex-col sm:flex-row gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="bg-white/10 border border-white/20 px-4 py-3 w-full sm:max-w-xs text-white placeholder:text-slate-400 focus:outline-none focus:border-primary rounded"
-                />
-                <Button className="bg-primary hover:bg-primary/90 text-white font-bold uppercase w-full sm:w-auto whitespace-nowrap px-6 py-3">
-                  Subscribe
+              <Link href="/contact">
+                <Button className="bg-primary hover:bg-primary/90 text-white font-bold uppercase px-8 py-3 group">
+                  Contact Us
+                  <ArrowRight
+                    className="ml-2 group-hover:translate-x-1 transition-transform"
+                    size={18}
+                  />
                 </Button>
-              </div>
+              </Link>
             </div>
-            <div className="flex flex-col items-start md:items-end justify-center">
-              <h3 className="text-xl sm:text-2xl font-bold font-[Chakra_Petch] uppercase italic mb-4">
-                Connect With Us
-              </h3>
-              <div className="flex gap-4">
+
+            {/* Right - Social Icons with brand colors */}
+            <div className="flex flex-col items-center md:items-end">
+              <p className="text-sm text-neutral-500 uppercase tracking-wider mb-4">Follow Us</p>
+              <div className="flex gap-3">
                 <a
                   href="https://www.instagram.com/combatzonemma/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"
+                  className="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-all"
+                  style={{
+                    background:
+                      "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                  }}
                 >
-                  <Instagram size={20} />
+                  <Instagram size={22} className="text-white" />
                 </a>
                 <a
                   href="https://www.facebook.com/CZMMA/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"
+                  className="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-all"
+                  style={{ backgroundColor: "#1877F2" }}
                 >
-                  <Facebook size={20} />
+                  <Facebook size={22} className="text-white" />
                 </a>
                 <a
                   href="https://www.youtube.com/@CombatZoneMMA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"
+                  className="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-all"
+                  style={{ backgroundColor: "#FF0000" }}
                 >
-                  <Youtube size={20} />
+                  <Youtube size={22} className="text-white" />
                 </a>
                 <a
                   href="https://x.com/czmma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"
+                  className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-all"
                 >
-                  <Twitter size={20} />
+                  <Twitter size={22} className="text-black" />
                 </a>
               </div>
             </div>
@@ -97,11 +88,11 @@ export function Footer() {
                 COMBAT<span className="text-primary">ZONE</span>
               </a>
             </Link>
-            <p className="text-slate-400 text-sm mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-neutral-400 text-sm mb-8 leading-relaxed max-w-2xl mx-auto">
               New England's longest-running MMA promotion. Owned and operated by UFC veteran Calvin
               Kattar. The proving ground for the region's top talent chasing the big stage.
             </p>
-            <div className="flex flex-col items-center gap-2 text-slate-400 text-sm">
+            <div className="flex flex-col items-center gap-2 text-neutral-400 text-sm">
               <div className="flex items-center gap-2">
                 <MapPin size={16} className="text-primary" />
                 <span>SNHU Arena, Manchester, NH</span>
@@ -115,7 +106,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-500 gap-4">
           <p className="text-center md:text-left">
             &copy; {new Date().getFullYear()} Combat Zone MMA. All rights reserved.
           </p>

@@ -75,8 +75,8 @@
 
   --radius: 0.25rem; /* Slight radius, not completely sharp */
 
-  --font-sans: 'Roboto', sans-serif;
-  --font-heading: 'Chakra Petch', sans-serif; /* Tech/Future Sports vibe */
+  --font-sans: "Roboto", sans-serif;
+  --font-heading: "Chakra Petch", sans-serif; /* Tech/Future Sports vibe */
 }
 
 /* Dark mode palette just in case */
@@ -109,20 +109,26 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
     @apply uppercase tracking-normal font-bold;
   }
   /* Improve touch targets on mobile */
-  button, a {
+  button,
+  a {
     @apply touch-manipulation;
   }
-  
+
   /* Focus visible styles for accessibility */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-primary;
   }
-  
+
   /* Remove default focus for mouse users, keep for keyboard */
   :focus:not(:focus-visible) {
     outline: none;
@@ -163,4 +169,14 @@
 
 .scroll-reveal-delay-3 {
   animation-delay: 0.3s;
+}
+
+/* Shimmer animation for credibility banner */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }

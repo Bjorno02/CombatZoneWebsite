@@ -18,8 +18,8 @@ export function EventSection() {
       />
 
       {/* Accent shapes */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-slate-50 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-neutral-50 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -tranneutral-x-1/2 tranneutral-y-1/2" />
 
       <div className="max-w-[1280px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
         {/* Section header */}
@@ -33,11 +33,11 @@ export function EventSection() {
           <Link href="/events">
             <Button
               variant="ghost"
-              className="text-slate-600 hover:text-slate-900 font-bold uppercase tracking-wider text-sm group"
+              className="text-neutral-600 hover:text-neutral-900 font-bold uppercase tracking-wider text-sm group"
             >
               All Events
               <ChevronRight
-                className="ml-1 group-hover:translate-x-1 transition-transform"
+                className="ml-1 group-hover:tranneutral-x-1 transition-transform"
                 size={16}
               />
             </Button>
@@ -49,12 +49,12 @@ export function EventSection() {
           {/* Left - Event Poster */}
           <div className="relative group flex justify-center lg:justify-start">
             {/* Shadow effect */}
-            <div className="absolute inset-4 bg-slate-900/10 blur-2xl rounded-lg" />
+            <div className="absolute inset-4 bg-neutral-900/10 blur-2xl rounded-lg" />
 
             <div className="relative">
               {/* Poster frame */}
-              <div className="absolute -inset-3 border border-slate-200" />
-              <div className="absolute -inset-6 border border-slate-100" />
+              <div className="absolute -inset-3 border border-neutral-200" />
+              <div className="absolute -inset-6 border border-neutral-100" />
 
               <img
                 src={eventPoster}
@@ -68,52 +68,52 @@ export function EventSection() {
           {/* Right - Event Info */}
           <div>
             {/* Date badge */}
-            <div className="inline-flex items-center gap-3 bg-slate-100 border border-slate-200 px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-3 bg-neutral-100 border border-neutral-200 px-4 py-2 mb-6">
               <Calendar className="text-primary" size={16} />
-              <span className="text-sm font-bold uppercase tracking-wider text-slate-700">
+              <span className="text-sm font-bold uppercase tracking-wider text-neutral-700">
                 February 21, 2026
               </span>
             </div>
 
             {/* Title */}
-            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold font-[Chakra_Petch] leading-[0.85] mb-8 text-slate-900">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold font-[Chakra_Petch] leading-[0.85] mb-8 text-neutral-900">
               CZ<span className="text-primary">91</span>
             </h2>
 
             {/* Event details */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-4 p-4 bg-slate-50 border-l-4 border-primary">
+              <div className="flex items-center gap-4 p-4 bg-neutral-50 border-l-4 border-primary">
                 <MapPin className="text-primary shrink-0" size={20} />
                 <div>
-                  <div className="font-bold text-slate-900 text-lg">SNHU Arena</div>
-                  <div className="text-sm text-slate-500">Manchester, New Hampshire</div>
+                  <div className="font-bold text-neutral-900 text-lg">SNHU Arena</div>
+                  <div className="text-sm text-neutral-500">Manchester, New Hampshire</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 bg-slate-50 border-l-4 border-slate-200">
-                <Clock className="text-slate-400 shrink-0" size={20} />
+              <div className="flex items-center gap-4 p-4 bg-neutral-50 border-l-4 border-neutral-200">
+                <Clock className="text-neutral-400 shrink-0" size={20} />
                 <div>
-                  <div className="font-bold text-slate-900 text-lg">10:00 PM EST</div>
-                  <div className="text-sm text-slate-500">Main Card Start</div>
+                  <div className="font-bold text-neutral-900 text-lg">10:00 PM EST</div>
+                  <div className="text-sm text-neutral-500">Main Card Start</div>
                 </div>
               </div>
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8 mb-10 py-6 border-y border-slate-200">
+            <div className="flex gap-8 mb-10 py-6 border-y border-neutral-200">
               <div>
                 <div className="text-4xl font-bold font-[Chakra_Petch] text-primary">15</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Bouts</div>
+                <div className="text-xs text-neutral-500 uppercase tracking-wider mt-1">Bouts</div>
               </div>
               <div>
-                <div className="text-4xl font-bold font-[Chakra_Petch] text-slate-900">2</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">
+                <div className="text-4xl font-bold font-[Chakra_Petch] text-neutral-900">2</div>
+                <div className="text-xs text-neutral-500 uppercase tracking-wider mt-1">
                   Title Fights
                 </div>
               </div>
               <div>
-                <div className="text-4xl font-bold font-[Chakra_Petch] text-slate-900">5</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">
+                <div className="text-4xl font-bold font-[Chakra_Petch] text-neutral-900">5</div>
+                <div className="text-xs text-neutral-500 uppercase tracking-wider mt-1">
                   Main Card
                 </div>
               </div>
@@ -134,7 +134,7 @@ export function EventSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase tracking-wider h-14 px-8"
+                  className="border-2 border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white font-bold uppercase tracking-wider h-14 px-8"
                 >
                   View Fight Card
                 </Button>

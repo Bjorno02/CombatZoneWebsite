@@ -12,9 +12,9 @@ export default function NotFound() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
+    <div className="min-h-screen bg-neutral-950 text-white relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-black" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent" />
 
       {/* Grid pattern */}
@@ -28,7 +28,7 @@ export default function NotFound() {
       />
 
       {/* Large 404 watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
+      <div className="absolute top-1/2 left-1/2 -tranneutral-x-1/2 -tranneutral-y-1/2 pointer-events-none select-none">
         <span className="text-[20rem] md:text-[30rem] font-bold font-heading text-white/[0.03] leading-none">
           404
         </span>
@@ -50,7 +50,7 @@ export default function NotFound() {
             Page Not Found
           </h2>
 
-          <p className="text-lg text-slate-400 mb-10 max-w-md mx-auto">
+          <p className="text-lg text-neutral-400 mb-10 max-w-md mx-auto">
             The page you're looking for doesn't exist or has been moved. Let's get you back in the
             cage.
           </p>
@@ -70,7 +70,7 @@ export default function NotFound() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-white/30 text-white hover:bg-white hover:text-slate-900 font-bold uppercase tracking-wider h-14 px-8"
+              className="border-2 border-white/30 text-white hover:bg-white hover:text-neutral-900 font-bold uppercase tracking-wider h-14 px-8"
               onClick={() => window.history.back()}
             >
               <ArrowLeft className="mr-2" size={20} />
@@ -80,24 +80,30 @@ export default function NotFound() {
 
           {/* Quick links */}
           <div className="mt-16 pt-8 border-t border-white/10">
-            <p className="text-sm text-slate-500 uppercase tracking-wider mb-4">Popular Pages</p>
+            <p className="text-sm text-neutral-500 uppercase tracking-wider mb-4">Popular Pages</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/events" className="text-slate-400 hover:text-primary transition-colors">
+              <Link
+                href="/events"
+                className="text-neutral-400 hover:text-primary transition-colors"
+              >
                 Events
               </Link>
-              <span className="text-slate-700">•</span>
-              <Link href="/about" className="text-slate-400 hover:text-primary transition-colors">
+              <span className="text-neutral-700">•</span>
+              <Link href="/about" className="text-neutral-400 hover:text-primary transition-colors">
                 About
               </Link>
-              <span className="text-slate-700">•</span>
+              <span className="text-neutral-700">•</span>
               <Link
                 href="/fighters"
-                className="text-slate-400 hover:text-primary transition-colors"
+                className="text-neutral-400 hover:text-primary transition-colors"
               >
                 Fighters
               </Link>
-              <span className="text-slate-700">•</span>
-              <Link href="/contact" className="text-slate-400 hover:text-primary transition-colors">
+              <span className="text-neutral-700">•</span>
+              <Link
+                href="/contact"
+                className="text-neutral-400 hover:text-primary transition-colors"
+              >
                 Contact
               </Link>
             </div>

@@ -7,7 +7,7 @@ export function AboutSection() {
   return (
     <section className="pt-16 md:pt-24 lg:pt-32 pb-40 md:pb-52 lg:pb-64 relative overflow-hidden z-20">
       {/* Bold geometric background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-neutral-100" />
 
       {/* Diagonal stripe pattern */}
       <div
@@ -24,8 +24,8 @@ export function AboutSection() {
       />
 
       {/* Large geometric accent shapes */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/[0.08] via-primary/[0.03] to-transparent -translate-y-1/3 translate-x-1/4" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-slate-900/[0.03] to-transparent translate-y-1/3 -translate-x-1/4" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/[0.08] via-primary/[0.03] to-transparent -tranneutral-y-1/3 tranneutral-x-1/4" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-neutral-900/[0.03] to-transparent tranneutral-y-1/3 -tranneutral-x-1/4" />
 
       {/* Corner accent bars - all 4 corners */}
       {/* Top Left */}
@@ -71,19 +71,19 @@ export function AboutSection() {
                 </span>
 
                 {/* Title */}
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 font-[Chakra_Petch] uppercase leading-[0.9] mb-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 font-[Chakra_Petch] uppercase leading-[0.9] mb-6">
                   From the Octagon
                   <br />
                   <span className="text-primary">to Ownership</span>
                 </h2>
 
                 {/* Description */}
-                <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
-                  UFC veteran <span className="font-bold text-slate-900">Calvin Kattar</span> brings
-                  his firsthand experience from the highest levels of competition to create
+                <p className="text-base md:text-lg text-neutral-600 mb-8 leading-relaxed">
+                  UFC veteran <span className="font-bold text-neutral-900">Calvin Kattar</span>{" "}
+                  brings his firsthand experience from the highest levels of competition to create
                   opportunities for the next generation of fighters. A{" "}
-                  <span className="font-bold text-slate-900">family-owned</span> operation built on
-                  passion, respect, and an unwavering commitment to the sport.
+                  <span className="font-bold text-neutral-900">family-owned</span> operation built
+                  on passion, respect, and an unwavering commitment to the sport.
                 </p>
 
                 {/* Stats/Features Grid */}
@@ -93,8 +93,10 @@ export function AboutSection() {
                       <Award className="text-primary" size={18} />
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900 text-sm uppercase">UFC Veteran</div>
-                      <div className="text-xs text-slate-500">Calvin Kattar</div>
+                      <div className="font-bold text-neutral-900 text-sm uppercase">
+                        UFC Veteran
+                      </div>
+                      <div className="text-xs text-neutral-500">Calvin Kattar</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -102,8 +104,10 @@ export function AboutSection() {
                       <Users className="text-primary" size={18} />
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900 text-sm uppercase">Family Owned</div>
-                      <div className="text-xs text-slate-500">Since 2000</div>
+                      <div className="font-bold text-neutral-900 text-sm uppercase">
+                        Family Owned
+                      </div>
+                      <div className="text-xs text-neutral-500">Since 2000</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -111,10 +115,10 @@ export function AboutSection() {
                       <Heart className="text-primary" size={18} />
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900 text-sm uppercase">
+                      <div className="font-bold text-neutral-900 text-sm uppercase">
                         Fighter First
                       </div>
-                      <div className="text-xs text-slate-500">Built for fighters</div>
+                      <div className="text-xs text-neutral-500">Built for fighters</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -122,8 +126,10 @@ export function AboutSection() {
                       <MapPin className="text-primary" size={18} />
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900 text-sm uppercase">New England</div>
-                      <div className="text-xs text-slate-500">24+ years</div>
+                      <div className="font-bold text-neutral-900 text-sm uppercase">
+                        New England
+                      </div>
+                      <div className="text-xs text-neutral-500">24+ years</div>
                     </div>
                   </div>
                 </div>
@@ -132,7 +138,7 @@ export function AboutSection() {
                 <Link href="/about">
                   <Button
                     variant="outline"
-                    className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold uppercase px-8 py-5 text-sm"
+                    className="border-2 border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white font-bold uppercase px-8 py-5 text-sm"
                   >
                     Read Our Story
                   </Button>

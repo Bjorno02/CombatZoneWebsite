@@ -31,7 +31,7 @@ interface SectionHeroProps {
 
 /**
  * SectionHero - Consistent hero component for dropdown section pages
- * 
+ *
  * Use this for all pages within a dropdown menu section (Events, Sponsors, etc.)
  * to maintain visual consistency across subsections.
  */
@@ -42,17 +42,17 @@ export function SectionHero({
   description,
   breadcrumbs,
   size = "default",
-  align = "left",
+  align = "center",
   children,
   className,
 }: SectionHeroProps) {
   // Process title to highlight specific word
   const renderTitle = () => {
     if (!highlightWord) {
-      return title.split('\n').map((line, i) => (
+      return title.split("\n").map((line, i) => (
         <span key={i}>
           {line}
-          {i < title.split('\n').length - 1 && <br />}
+          {i < title.split("\n").length - 1 && <br />}
         </span>
       ));
     }
@@ -60,15 +60,13 @@ export function SectionHero({
     const parts = title.split(highlightWord);
     return parts.map((part, i) => (
       <span key={i}>
-        {part.split('\n').map((line, j) => (
+        {part.split("\n").map((line, j) => (
           <span key={j}>
             {line}
-            {j < part.split('\n').length - 1 && <br />}
+            {j < part.split("\n").length - 1 && <br />}
           </span>
         ))}
-        {i < parts.length - 1 && (
-          <span className="text-primary">{highlightWord}</span>
-        )}
+        {i < parts.length - 1 && <span className="text-primary">{highlightWord}</span>}
       </span>
     ));
   };
@@ -79,99 +77,68 @@ export function SectionHero({
     tall: "min-h-[60vh]",
   };
 
-  const alignClasses = {
-    left: "text-left",
-    center: "text-center mx-auto",
-  };
-
   return (
-    <section className={cn(
-      "relative flex items-center overflow-hidden",
-      sizeClasses[size],
-      className
-    )}>
+    <section
+      className={cn(
+        "relative flex items-center justify-center overflow-hidden",
+        sizeClasses[size],
+        className
+      )}
+    >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-black" />
-      
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-black" />
+
       {/* Angular accent shapes */}
       <div className="absolute top-0 right-0 w-2/3 h-full bg-primary/10 transform -skew-x-12 origin-top-right" />
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 transform -skew-x-12 origin-top-right translate-x-20" />
-      
-      {/* Horizontal accent lines */}
-      <div className="absolute top-1/2 left-0 w-32 h-px bg-gradient-to-r from-primary to-transparent" />
-      <div className="absolute top-1/3 left-0 w-16 h-px bg-gradient-to-r from-primary/50 to-transparent" />
-      
+
       {/* Grid pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03]" 
-        style={{ 
-          backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }} 
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
       />
 
-      <Container className="relative z-10 py-20 md:py-28">
-        <div className={cn("max-w-4xl", alignClasses[align])}>
-          {/* Breadcrumbs */}
-          {breadcrumbs && breadcrumbs.length > 0 && (
-            <nav className="flex items-center gap-2 text-slate-500 text-sm mb-6" aria-label="Breadcrumb">
-              {breadcrumbs.map((crumb, i) => (
-                <span key={i} className="flex items-center gap-2">
-                  {crumb.href ? (
-                    <Link href={crumb.href} className="hover:text-primary transition-colors">
-                      {crumb.label}
-                    </Link>
-                  ) : (
-                    <span className="text-slate-400">{crumb.label}</span>
-                  )}
-                  {i < breadcrumbs.length - 1 && (
-                    <ChevronRight size={14} aria-hidden="true" />
-                  )}
-                </span>
-              ))}
-            </nav>
-          )}
-
+      <Container className="relative z-10 pt-32 md:pt-40 pb-20 md:pb-24">
+        <div className={cn("max-w-4xl mx-auto text-center", align === "left" && "text-left mx-0")}>
           {/* Label */}
           {label && (
-            <div className={cn(
-              "flex items-center gap-4 mb-6",
-              align === "center" && "justify-center"
-            )}>
-              <div className="h-px flex-1 max-w-16 bg-primary" />
-              <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase">
-                {label}
-              </span>
-              {align === "center" && <div className="h-px flex-1 max-w-16 bg-primary" />}
-            </div>
+            <p className="text-sm font-medium text-primary tracking-widest uppercase mb-6">
+              {label}
+            </p>
           )}
-          
+
           {/* Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading text-white leading-[0.9] mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-[Chakra_Petch] text-white leading-[1.05] mb-6">
             {renderTitle()}
           </h1>
-          
+
           {/* Description */}
           {description && (
-            <p className={cn(
-              "text-xl md:text-2xl text-slate-400 leading-relaxed font-light",
-              align === "left" ? "max-w-2xl" : "max-w-2xl mx-auto"
-            )}>
+            <p
+              className={cn(
+                "text-lg md:text-xl text-neutral-400 leading-relaxed",
+                align === "center" ? "max-w-2xl mx-auto" : "max-w-2xl"
+              )}
+            >
               {description}
             </p>
           )}
 
           {/* Children (CTAs, etc.) */}
           {children && (
-            <div className={cn("mt-10", align === "center" && "flex justify-center")}>
+            <div className={cn("mt-8", align === "center" && "flex justify-center")}>
               {children}
             </div>
           )}
         </div>
       </Container>
 
-      {/* Bottom edge accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      {/* Bottom red accent bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
     </section>
   );
 }

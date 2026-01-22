@@ -125,7 +125,7 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <label
                       htmlFor="firstName"
-                      className="text-sm font-bold uppercase text-slate-500"
+                      className="text-sm font-bold uppercase text-neutral-500"
                     >
                       First Name <span className="text-primary">*</span>
                     </label>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <label
                       htmlFor="lastName"
-                      className="text-sm font-bold uppercase text-slate-500"
+                      className="text-sm font-bold uppercase text-neutral-500"
                     >
                       Last Name <span className="text-primary">*</span>
                     </label>
@@ -180,7 +180,7 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold uppercase text-slate-500">
+                  <label htmlFor="email" className="text-sm font-bold uppercase text-neutral-500">
                     Email <span className="text-primary">*</span>
                   </label>
                   <Input
@@ -202,7 +202,7 @@ export default function ContactPage() {
 
                 {/* Subject */}
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-bold uppercase text-slate-500">
+                  <label htmlFor="subject" className="text-sm font-bold uppercase text-neutral-500">
                     Subject <span className="text-primary">*</span>
                   </label>
                   <select
@@ -230,7 +230,7 @@ export default function ContactPage() {
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-bold uppercase text-slate-500">
+                  <label htmlFor="message" className="text-sm font-bold uppercase text-neutral-500">
                     Message <span className="text-primary">*</span>
                   </label>
                   <Textarea
@@ -265,7 +265,7 @@ export default function ContactPage() {
                   )}
                 </Button>
 
-                <p className="text-xs text-slate-500 text-center">
+                <p className="text-xs text-neutral-500 text-center">
                   <span className="text-primary">*</span> Required fields
                 </p>
               </form>
@@ -277,14 +277,14 @@ export default function ContactPage() {
               <div className="space-y-10 mb-12">
                 <div className="flex items-start gap-4">
                   <div
-                    className="w-12 h-12 bg-slate-100 flex items-center justify-center text-primary rounded-none"
+                    className="w-12 h-12 bg-neutral-100 flex items-center justify-center text-primary rounded-none"
                     aria-hidden="true"
                   >
                     <MapPin size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold font-heading uppercase text-lg">Mailing Address</h3>
-                    <p className="text-slate-600">
+                    <p className="text-neutral-600">
                       555 Elm Street
                       <br />
                       Manchester, NH 03101
@@ -293,14 +293,14 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div
-                    className="w-12 h-12 bg-slate-100 flex items-center justify-center text-primary rounded-none"
+                    className="w-12 h-12 bg-neutral-100 flex items-center justify-center text-primary rounded-none"
                     aria-hidden="true"
                   >
                     <Mail size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold font-heading uppercase text-lg">Email</h3>
-                    <p className="text-slate-600">
+                    <p className="text-neutral-600">
                       <a
                         href="mailto:info@combatzonemma.com"
                         className="hover:text-primary transition-colors"
@@ -319,14 +319,14 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div
-                    className="w-12 h-12 bg-slate-100 flex items-center justify-center text-primary rounded-none"
+                    className="w-12 h-12 bg-neutral-100 flex items-center justify-center text-primary rounded-none"
                     aria-hidden="true"
                   >
                     <Phone size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold font-heading uppercase text-lg">Phone</h3>
-                    <p className="text-slate-600">
+                    <p className="text-neutral-600">
                       <a href="tel:+15551234567" className="hover:text-primary transition-colors">
                         (555) 123-4567
                       </a>
@@ -336,7 +336,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map Placeholder */}
-              <div className="w-full h-[300px] bg-slate-200 flex items-center justify-center font-bold text-slate-400 uppercase">
+              <div className="w-full h-[300px] bg-neutral-200 flex items-center justify-center font-bold text-neutral-400 uppercase">
                 Google Maps Embed (SNHU Arena)
               </div>
             </div>

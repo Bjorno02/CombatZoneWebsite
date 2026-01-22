@@ -1,6 +1,6 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Container } from "@/components/layout/Container";
-import { ExternalLink, PlayCircle } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { YouTubeFeed } from "@/components/media/YouTubeFeed";
 import { useSEO, SEO_CONFIG } from "@/hooks/useSEO";
 
@@ -30,43 +30,20 @@ export default function MediaPage() {
           <h2 className="text-2xl md:text-3xl font-bold font-[Chakra_Petch] uppercase mb-6 border-l-4 border-primary pl-4">
             FEATURED VIDEO
           </h2>
-          <a
-            href={`https://www.youtube.com/watch?v=${FEATURED_VIDEO_ID}&t=${FEATURED_VIDEO_START}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="aspect-video bg-slate-900 w-full relative overflow-hidden rounded-lg shadow-2xl block group"
-          >
-            {/* YouTube Thumbnail */}
-            <img
-              src={`https://img.youtube.com/vi/${FEATURED_VIDEO_ID}/maxresdefault.jpg`}
-              alt="Combat Zone MMA Featured Video"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              onError={(e) => {
-                // Fallback to standard quality if maxres not available
-                (e.target as HTMLImageElement).src =
-                  `https://img.youtube.com/vi/${FEATURED_VIDEO_ID}/hqdefault.jpg`;
-              }}
+          <div className="aspect-video bg-neutral-900 w-full relative overflow-hidden rounded-lg shadow-2xl">
+            <iframe
+              src={`https://www.youtube.com/embed/${FEATURED_VIDEO_ID}?start=${FEATURED_VIDEO_START}&rel=0`}
+              title="Combat Zone MMA Featured Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
             />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-              {/* Play Button */}
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-red-600 group-hover:bg-red-700 rounded-full flex items-center justify-center transition-all group-hover:scale-110 shadow-2xl">
-                <PlayCircle className="w-12 h-12 md:w-14 md:h-14 text-white" />
-              </div>
-            </div>
-
-            {/* Watch on YouTube badge */}
-            <div className="absolute bottom-4 right-4 bg-black/80 text-white px-4 py-2 rounded flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-              <ExternalLink size={16} />
-              Watch on YouTube
-            </div>
-          </a>
+          </div>
         </Container>
       </section>
 
       {/* Latest Videos - YouTube Feed */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-16 md:py-24 bg-neutral-50">
         <Container>
           <h2 className="text-3xl font-bold font-[Chakra_Petch] uppercase mb-12">Latest Videos</h2>
           <YouTubeFeed />
@@ -86,7 +63,7 @@ export default function MediaPage() {
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="aspect-square bg-slate-100 relative group overflow-hidden cursor-pointer"
+                className="aspect-square bg-neutral-100 relative group overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-white font-bold uppercase border-b-2 border-primary">

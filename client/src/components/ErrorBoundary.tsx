@@ -14,8 +14,7 @@ interface State {
 }
 
 /**
- * Error Boundary - Catches JavaScript errors in child components
- * Prevents entire app from crashing when a component fails
+ * Error Boundary
  */
 export class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
@@ -43,18 +42,18 @@ export class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
           <Container>
             <div className="max-w-md mx-auto text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <AlertTriangle className="text-primary" size={32} />
               </div>
-              
-              <h1 className="text-2xl font-bold font-heading text-slate-900 mb-3">
+
+              <h1 className="text-2xl font-bold font-heading text-neutral-900 mb-3">
                 Something went wrong
               </h1>
-              
-              <p className="text-slate-600 mb-8">
+
+              <p className="text-neutral-600 mb-8">
                 We encountered an unexpected error. Please try refreshing the page.
               </p>
 
@@ -66,18 +65,15 @@ export class ErrorBoundary extends Component<Props, State> {
                   <RefreshCw size={16} className="mr-2" />
                   Refresh Page
                 </Button>
-                
-                <Button
-                  variant="outline"
-                  onClick={this.handleReset}
-                >
+
+                <Button variant="outline" onClick={this.handleReset}>
                   Try Again
                 </Button>
               </div>
 
               {process.env.NODE_ENV === "development" && this.state.error && (
-                <details className="mt-8 text-left bg-slate-900 text-slate-300 p-4 rounded text-sm overflow-auto">
-                  <summary className="cursor-pointer text-slate-400 mb-2">
+                <details className="mt-8 text-left bg-neutral-900 text-neutral-300 p-4 rounded text-sm overflow-auto">
+                  <summary className="cursor-pointer text-neutral-400 mb-2">
                     Error Details (dev only)
                   </summary>
                   <pre className="whitespace-pre-wrap">
